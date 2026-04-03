@@ -1,0 +1,55 @@
+== ver0.3==
+Corrigido o mostrador de gold que não aparecia G depois dos números
+Adicionado o Tomate
+ - Desbloquear: Clicar na caixa 7 vezes e na arvora mais 7 vezes
+ - Custo: 300
+ - Valor: 300
+
+== ver0.2 ==
+Patch de balanceamento
+Plantas
+* Nabo
+- colhe uma vez só dá pouco lucro
+- Custo ajustado para 120
+- Valor ajustado para 140
+
+
+* Morango
+- colhe varias vezes dá lucro a partir da 3ª colheita
+- Custo ajustado para 240
+- Valor ajustado para 100
+
+* Abacaxi
+- ser uma planta cara
+- colhe varias vezes 
+- demora para crescer
+- Custo ajustado para 350
+- Valor ajustado para 350
+
+
+
+== web_ver0.1 ==
+Adicionado o primeiro dia do outono
+
+== windows_ver0.1 ==
+Plantas
+* Nabo
+* Morango
+Tela de final de jogo
+* O jogo termina em 31 dias
+* O jogo termina se não tiver plantas nem dinheiro para plantar
+
+
+== HM FoMT==
+Turnip
+1 - seed
+2 - seed
+3 - planta
+4 - planta
+5 - colheita
+ 
+Cabbage
+2 - seed
+3 - seed
+4 - seed
+5 - seed
