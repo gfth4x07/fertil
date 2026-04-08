@@ -11,15 +11,24 @@ config_version=5
 [application]
 
 config/name="fertil"
-run/main_scene="res://jogo.tscn"
+run/main_scene="uid://b6yc55k17nhdr"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="uid://bgynbht2r6co0"
+
+[autoload]
+
+global="*res://global.gd"
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [display]
 
 window/size/viewport_width=540
 window/size/viewport_height=299
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/silent_wolf/plugin.cfg")
 
 [rendering]
 

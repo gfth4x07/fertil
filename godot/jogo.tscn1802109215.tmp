@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://da3slwchrjl3m"]
+[gd_scene load_steps=25 format=3 uid="uid://da3slwchrjl3m"]
 
 [ext_resource type="Script" uid="uid://bq0n7p6rm8rsb" path="res://jogo.gd" id="1_45nkh"]
 [ext_resource type="Texture2D" uid="uid://7wbo85a3bkrc" path="res://sprites/background.png" id="2_ysdx3"]
@@ -9,9 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://ctpldhcaa4wb" path="res://sprites/fim-de-jogo.png" id="6_8c340"]
 [ext_resource type="Texture2D" uid="uid://bjwqt82t8holf" path="res://sprites/autumn-tree.png" id="6_45nkh"]
 [ext_resource type="Texture2D" uid="uid://buhgsl58qhl7m" path="res://sprites/ceu.png" id="6_t8pok"]
-[ext_resource type="Script" uid="uid://bvh61cwst5xtc" path="res://tutorial.gd" id="10_orj5g"]
-[ext_resource type="Texture2D" uid="uid://r8v0xrq35yj" path="res://sprites/avatar/rita.png" id="11_01kpq"]
-[ext_resource type="Texture2D" uid="uid://bcibypb2mepie" path="res://sprites/seta.png" id="12_01kpq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msvki"]
 
@@ -43,10 +40,9 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t8pok"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_orj5g"]
-
 [node name="jogo_principal" type="Node2D"]
 script = ExtResource("1_45nkh")
+game_mode = null
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(0, 47)
@@ -209,55 +205,9 @@ offset_right = 517.0
 offset_bottom = 321.9063
 text = "JOGAR NOVAMENTE"
 
-[node name="tutorial" type="Node2D" parent="."]
-script = ExtResource("10_orj5g")
-
-[node name="rita" type="Sprite2D" parent="tutorial"]
-position = Vector2(229, 122)
-scale = Vector2(0.08885544, 0.08885543)
-texture = ExtResource("11_01kpq")
-
-[node name="fala" type="RichTextLabel" parent="tutorial"]
-offset_left = 63.0
-offset_top = 157.0
-offset_right = 396.01807
-offset_bottom = 238.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_orj5g")
-
-[node name="proximo" type="Button" parent="tutorial"]
-offset_left = 288.0
-offset_top = 261.0
-offset_right = 443.0
-offset_bottom = 292.0
-text = "Próximo"
-
-[node name="voltar_menu" type="Button" parent="tutorial"]
-offset_left = 162.0
-offset_top = 206.0
-offset_right = 289.0
-offset_bottom = 237.0
-text = "Voltar ao menu"
-
-[node name="seta" type="Sprite2D" parent="tutorial"]
-position = Vector2(393, 276)
-scale = Vector2(0.4210527, 0.36494255)
-texture = ExtResource("12_01kpq")
-
-[node name="Label" type="Label" parent="tutorial"]
-offset_left = 5.0
-offset_top = 276.0
-offset_right = 45.0
-offset_bottom = 299.0
-text = "1"
-
 [connection signal="input_event" from="background/jardim" to="." method="_on_jardim_input_event"]
-[connection signal="input_event" from="background/jardim" to="tutorial" method="_on_jardim_input_event"]
 [connection signal="button_up" from="prox_dia" to="." method="_on_prox_dia_button_up"]
-[connection signal="button_up" from="prox_dia" to="tutorial" method="_on_prox_dia_button_up"]
 [connection signal="pressed" from="tomato_button" to="." method="_on_tomato_button_pressed"]
 [connection signal="item_clicked" from="menu_loja/Loja" to="." method="_on_item_list_item_clicked"]
-[connection signal="item_clicked" from="menu_loja/Loja" to="tutorial" method="_on_loja_item_clicked"]
 [connection signal="item_selected" from="menu_loja/Loja" to="." method="_on_as_item_selected"]
 [connection signal="pressed" from="fim_de_jogo/novo_jogo" to="." method="_on_novo_jogo_pressed"]
-[connection signal="pressed" from="tutorial/proximo" to="tutorial" method="_on_proximo_pressed"]
-[connection signal="pressed" from="tutorial/voltar_menu" to="tutorial" method="_on_voltar_menu_pressed"]

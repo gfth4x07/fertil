@@ -1,7 +1,5 @@
 extends Node2D
 
-var game_mode = "play"
-
 var gold = 300
 var dia = 1
 var dias_mes = 31  # 1ºdia do outono
@@ -25,8 +23,8 @@ func _ready() -> void:
 	dia = 1
 	dias_mes = 31
 	
-	game_mode = "debug"
-	if game_mode == "debug":
+	#game_mode = "debug"
+	if global.game_mode == "debug":
 		dias_mes = 5
 	
 	$background/jardim/CollisionPolygon2D.disabled = false
@@ -37,7 +35,11 @@ func _ready() -> void:
 	$menu_loja/Loja.select(0,true)
 	$tree_spring.show()
 	$tree_aut.hide()
-
+	
+	if global.game_mode == "tutorial":
+		tutorial()
+	else:
+		$tutorial.hide()
 
 #Adicionar o tomate
 func _on_tomato_button_pressed():
@@ -97,7 +99,9 @@ func _on_prox_dia_button_up() -> void:
 func colheu_planta(valor: int):
 	gold += valor
 	$Gold.text = "Gold: "+str(gold)+"G"
-
+	if(global.game_mode == "tutorial"):
+		$tutorial._on_proximo_pressed()
+		
 func inicia_outono():
 	get_tree().call_group("plantas","MORRER")
 	$background/jardim/CollisionPolygon2D.disabled = true
@@ -108,9 +112,9 @@ func fim_de_jogo():
 	if dia > dias_mes:
 		$fim_de_jogo/dia.text = "A primavera acabou."
 	$fim_de_jogo/pontuação.text = "Você terminou com "+str(gold)+"G"
-	
+	global.score = gold
 	$fim_de_jogo.show()
-	
+	$prox_dia.disabled()
 	#get_tree().paused = true
 
 
@@ -118,3 +122,17 @@ func fim_de_jogo():
 func _on_novo_jogo_pressed() -> void:
 	_ready()
 	pass # Replace with function body.
+
+
+func tutorial():
+	global.etapa_tutorial = 0
+	$tutorial/seta.hide()
+	$tutorial.show()
+	$background/jardim/CollisionPolygon2D.disabled = true
+	$prox_dia.disabled = true
+	#TODO FAZER UM LOOP
+	$menu_loja/Loja.set_item_disabled(0,true)
+	$menu_loja/Loja.set_item_disabled(1,true)
+	$menu_loja/Loja.set_item_disabled(2,true)
+	$menu_loja/Loja.set_item_disabled(3,true)
+	

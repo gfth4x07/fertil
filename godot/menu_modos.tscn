@@ -1,14 +1,41 @@
-[gd_scene format=3 uid="uid://b6yc55k17nhdr"]
+[gd_scene load_steps=2 format=3 uid="uid://b6yc55k17nhdr"]
 
-[node name="Control" type="Control"]
+[ext_resource type="Script" uid="uid://ehp12m41ubml" path="res://menu_modos.gd" id="1_151ot"]
+
+[node name="menu_modos" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_151ot")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 214.0
+offset_right = 394.0
+offset_bottom = 256.0
+text = "JOGAR"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 155.0
-offset_top = 93.0
-offset_right = 195.0
-offset_bottom = 133.0
+offset_left = 154.0
+offset_top = 83.0
+offset_right = 387.0
+offset_bottom = 110.0
+text = "SELECIONE O MODO DE JOGO"
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 120.0
+offset_right = 375.0
+offset_bottom = 156.0
+item_count = 2
+popup/item_0/text = "Play"
+popup/item_0/id = 0
+popup/item_1/text = "Tutorial"
+popup/item_1/id = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]

@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://86hlwpqinb08"]
+
+[ext_resource type="Script" uid="uid://b43rgns42iswd" path="res://high_score.gd" id="1_y2wna"]
+
+[node name="high_score" type="Node2D"]
+script = ExtResource("1_y2wna")
+
+[node name="Texto" type="RichTextLabel" parent="."]
+offset_left = 25.0
+offset_top = 22.0
+offset_right = 236.0
+offset_bottom = 152.0
+text = "Parabéns!
+
+Voocê fez pontos
+
+Digite seu apelido"
+
+[node name="enviar" type="Button" parent="."]
+offset_left = 13.0
+offset_top = 241.0
+offset_right = 260.0
+offset_bottom = 274.0
+text = "Enviar score"
+
+[node name="nome" type="LineEdit" parent="."]
+offset_left = 39.0
+offset_top = 149.0
+offset_right = 208.0
+offset_bottom = 180.0
+max_length = 12
+
+[node name="alerta" type="Label" parent="."]
+offset_left = 27.0
+offset_top = 199.0
+offset_right = 235.0
+offset_bottom = 222.0
+text = "ESCREVE SEU NOME MANO"
+
+[node name="Placar" type="Label" parent="."]
+offset_left = 305.0
+offset_top = 14.0
+offset_right = 366.0
+offset_bottom = 37.0
+text = "PLACAR"
+
+[node name="Leader_bord" type="RichTextLabel" parent="."]
+offset_left = 305.0
+offset_top = 45.0
+offset_right = 534.0
+offset_bottom = 238.0
+
+[connection signal="pressed" from="enviar" to="." method="_on_enviar_pressed"]
+[connection signal="focus_entered" from="nome" to="." method="_on_nome_focus_entered"]
