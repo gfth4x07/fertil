@@ -28,6 +28,7 @@ func _ready() -> void:
 	if global.game_mode == "debug":
 		dias_mes = 5
 	
+	$prox_dia.disabled = false
 	$background/jardim/CollisionPolygon2D.disabled = false
 	get_tree().call_group("plantas","queue_free")
 	$fim_de_jogo.hide()
