@@ -48,7 +48,7 @@ text = "PLACAR"
 offset_left = 305.0
 offset_top = 45.0
 offset_right = 534.0
-offset_bottom = 238.0
+offset_bottom = 290.0
 
 [connection signal="pressed" from="enviar" to="." method="_on_enviar_pressed"]
 [connection signal="focus_entered" from="nome" to="." method="_on_nome_focus_entered"]

@@ -159,7 +159,6 @@ position = Vector2(396.5, 107)
 texture = ExtResource("6_45nkh")
 
 [node name="fim_de_jogo" type="Sprite2D" parent="."]
-visible = false
 scale = Vector2(1, 0.8542857)
 texture = ExtResource("6_8c340")
 centered = false
@@ -203,13 +202,21 @@ fit_content = true
 scroll_active = false
 
 [node name="novo_jogo" type="Button" parent="fim_de_jogo"]
-offset_left = 355.0
-offset_top = 289.13043
-offset_right = 517.0
-offset_bottom = 321.9063
+offset_left = 327.0
+offset_top = 248.16052
+offset_right = 489.0
+offset_bottom = 280.9364
 text = "JOGAR NOVAMENTE"
 
+[node name="placar" type="Button" parent="fim_de_jogo"]
+offset_left = 94.0
+offset_top = 244.64883
+offset_right = 224.0
+offset_bottom = 277.4247
+text = "PLACAR"
+
 [node name="tutorial" type="Node2D" parent="."]
+visible = false
 script = ExtResource("10_orj5g")
 
 [node name="rita" type="Sprite2D" parent="tutorial"]
@@ -259,5 +266,6 @@ text = "1"
 [connection signal="item_clicked" from="menu_loja/Loja" to="tutorial" method="_on_loja_item_clicked"]
 [connection signal="item_selected" from="menu_loja/Loja" to="." method="_on_as_item_selected"]
 [connection signal="pressed" from="fim_de_jogo/novo_jogo" to="." method="_on_novo_jogo_pressed"]
+[connection signal="pressed" from="fim_de_jogo/placar" to="." method="_on_placar_pressed"]
 [connection signal="pressed" from="tutorial/proximo" to="tutorial" method="_on_proximo_pressed"]
 [connection signal="pressed" from="tutorial/voltar_menu" to="tutorial" method="_on_voltar_menu_pressed"]

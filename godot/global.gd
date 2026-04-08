@@ -1,8 +1,8 @@
 extends Node
 
-var game_mode = "tutorial"
+var game_mode = "debug"
 var etapa_tutorial = 0
-var score = 100
+var score = 1000
 var scoreId = ""
 
 # Called when the node enters the scene tree for the first time.

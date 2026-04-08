@@ -1,7 +1,14 @@
 extends Control
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SilentWolf.configure({
+		"api_key": "yESwdyObpS1sjDAj50QtVkM90T0utQl1Zi2MkDc5",
+		"game_id": "fertil",
+		"log_level": 1
+		})
 	pass # Replace with function body.
 
 

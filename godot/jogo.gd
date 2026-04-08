@@ -14,6 +14,7 @@ const Morango = preload("res://morango.tscn")
 const Abacaxi = preload("res://abacaxi.tscn")
 const Tomate = preload("res://tomate.tscn")
 
+@onready var HS_screen = preload("res://high_score.tscn")
 
 # Major bug fix: As plantas podem ficar muito juntas (aumentar o tamanho do button)
 
@@ -114,14 +115,16 @@ func fim_de_jogo():
 	$fim_de_jogo/pontuação.text = "Você terminou com "+str(gold)+"G"
 	global.score = gold
 	$fim_de_jogo.show()
-	$prox_dia.disabled()
+	$prox_dia.disabled = true
 	#get_tree().paused = true
 
 
 
 func _on_novo_jogo_pressed() -> void:
 	_ready()
-	pass # Replace with function body.
+
+func _on_placar_pressed() -> void:
+	get_tree().change_scene_to_file("res://high_score.tscn")
 
 
 func tutorial():
