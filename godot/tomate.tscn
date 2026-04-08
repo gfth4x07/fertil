@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://orf515r0cgan"]
+
+[ext_resource type="PackedScene" uid="uid://b7eqpri0p1jxa" path="res://planta.tscn" id="1_imq1r"]
+[ext_resource type="Texture2D" uid="uid://hjabwimcmbww" path="res://sprites/crops.png" id="2_qujxq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i61qf"]
+atlas = ExtResource("2_qujxq")
+region = Rect2(34, 1, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dwjm"]
+atlas = ExtResource("2_qujxq")
+region = Rect2(102, 26, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gk01"]
+atlas = ExtResource("2_qujxq")
+region = Rect2(119, 26, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhr0x"]
+atlas = ExtResource("2_qujxq")
+region = Rect2(136, 26, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6xya"]
+atlas = ExtResource("2_qujxq")
+region = Rect2(153, 26, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5she"]
+atlas = ExtResource("2_qujxq")
+region = Rect2(170, 26, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_md6wg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i61qf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dwjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gk01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhr0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6xya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5she")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="planta" instance=ExtResource("1_imq1r")]
+custo = 300
+valor = 600
+estagio = [0, 1, 2, 2, 3, 4, 5]
+estagio_pos_colheita = 0
+
+[node name="animated" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_md6wg")

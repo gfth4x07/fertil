@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7eqpri0p1jxa"]
+
+[ext_resource type="Script" uid="uid://djd0g7i64bupt" path="res://planta.gd" id="1_mljjs"]
+[ext_resource type="Texture2D" uid="uid://hjabwimcmbww" path="res://sprites/crops.png" id="2_tw4h3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jgas5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ncsi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mljjs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tw4h3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yigd2"]
+
+[node name="planta" type="Node2D" groups=["plantas"]]
+script = ExtResource("1_mljjs")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(16, 24)
+offset_left = -14.0
+offset_top = -13.0
+offset_right = 14.0
+offset_bottom = 15.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jgas5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6ncsi")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mljjs")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tw4h3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yigd2")
+flat = true
+
+[node name="terra" type="Sprite2D" parent="."]
+texture = ExtResource("2_tw4h3")
+region_enabled = true
+region_rect = Rect2(17, 0, 16, 25)
+
+[node name="animated" type="AnimatedSprite2D" parent="."]
+
+[connection signal="planta_colhida" from="." to="." method="_on_planta_colhida"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

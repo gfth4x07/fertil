@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://byas14wi2vhes"]
+
+[ext_resource type="PackedScene" uid="uid://b7eqpri0p1jxa" path="res://planta.tscn" id="1_lprtv"]
+[ext_resource type="Texture2D" uid="uid://hjabwimcmbww" path="res://sprites/crops.png" id="2_rv8gf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv8gf"]
+atlas = ExtResource("2_rv8gf")
+region = Rect2(34, 1, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfc8c"]
+atlas = ExtResource("2_rv8gf")
+region = Rect2(0, 101, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwq5b"]
+atlas = ExtResource("2_rv8gf")
+region = Rect2(17, 101, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_neit1"]
+atlas = ExtResource("2_rv8gf")
+region = Rect2(34, 101, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r04t0"]
+atlas = ExtResource("2_rv8gf")
+region = Rect2(51, 101, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_svp2x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rv8gf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfc8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwq5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_neit1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r04t0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="morango" instance=ExtResource("1_lprtv")]
+custo = 240
+valor = 100
+estagio = [0, 1, 1, 1, 2, 2, 2, 3, 4]
+colheita_recorrente = true
+
+[node name="animated" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_svp2x")

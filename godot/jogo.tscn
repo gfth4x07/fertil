@@ -1,0 +1,209 @@
+[gd_scene load_steps=25 format=3 uid="uid://da3slwchrjl3m"]
+
+[ext_resource type="Script" uid="uid://bq0n7p6rm8rsb" path="res://jogo.gd" id="1_45nkh"]
+[ext_resource type="Texture2D" uid="uid://7wbo85a3bkrc" path="res://sprites/background.png" id="2_ysdx3"]
+[ext_resource type="Texture2D" uid="uid://c5glwdiv8s8lr" path="res://sprites/spring-tree.png" id="3_t8pok"]
+[ext_resource type="Texture2D" uid="uid://dvaqnmd1rfwqg" path="res://sprites/menu-direito.png" id="4_mtw28"]
+[ext_resource type="Texture2D" uid="uid://dykl4c3bphy3g" path="res://sprites/proximo-dia.png" id="5_orj5g"]
+[ext_resource type="Texture2D" uid="uid://crycdrevwjnc8" path="res://sprites/gold.png" id="5_ysdx3"]
+[ext_resource type="Texture2D" uid="uid://ctpldhcaa4wb" path="res://sprites/fim-de-jogo.png" id="6_8c340"]
+[ext_resource type="Texture2D" uid="uid://bjwqt82t8holf" path="res://sprites/autumn-tree.png" id="6_45nkh"]
+[ext_resource type="Texture2D" uid="uid://buhgsl58qhl7m" path="res://sprites/ceu.png" id="6_t8pok"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msvki"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qew1n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qlqx7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dwd3o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ebkc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48tcl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_orj5g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_01kpq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8c340"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_45nkh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mtw28"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ka1p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7rhuj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ysdx3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t8pok"]
+
+[node name="jogo_principal" type="Node2D"]
+script = ExtResource("1_45nkh")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(0, 47)
+texture = ExtResource("2_ysdx3")
+centered = false
+
+[node name="jardim" type="Area2D" parent="background"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="background/jardim"]
+polygon = PackedVector2Array(64, 22, 64, 230, 440, 230, 440, 134, 336, 134, 336, 22)
+
+[node name="tree_spring" type="Sprite2D" parent="."]
+position = Vector2(396.5, 107)
+texture = ExtResource("3_t8pok")
+
+[node name="céu" type="Sprite2D" parent="."]
+texture = ExtResource("6_t8pok")
+centered = false
+
+[node name="prox_dia" type="TextureButton" parent="."]
+offset_left = 451.0
+offset_top = 263.0
+offset_right = 540.0
+offset_bottom = 299.0
+texture_normal = ExtResource("5_orj5g")
+
+[node name="gold_moldura" type="Sprite2D" parent="."]
+position = Vector2(451, 0)
+scale = Vector2(1.1265825, 1.0444444)
+texture = ExtResource("5_ysdx3")
+centered = false
+
+[node name="Gold" type="RichTextLabel" parent="."]
+offset_left = 457.0
+offset_top = 1.0
+offset_right = 534.0
+offset_bottom = 45.0
+theme_override_colors/default_color = Color(1, 1, 0.16470589, 1)
+theme_override_colors/font_outline_color = Color(0.8117647, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.4)
+theme_override_font_sizes/normal_font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxEmpty_msvki")
+text = "Gold: 9999G"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dia" type="RichTextLabel" parent="."]
+offset_left = 197.0
+offset_top = 3.0
+offset_right = 253.0
+offset_bottom = 26.0
+text = "Dia: 99"
+scroll_active = false
+
+[node name="tomato_button" type="Button" parent="."]
+offset_left = 197.0
+offset_top = 9.0
+offset_right = 250.0
+offset_bottom = 22.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qew1n")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qlqx7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dwd3o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0ebkc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_48tcl")
+
+[node name="menu_loja" type="Sprite2D" parent="."]
+position = Vector2(451.00003, 47)
+scale = Vector2(0.9999996, 0.864)
+texture = ExtResource("4_mtw28")
+centered = false
+
+[node name="Loja" type="ItemList" parent="menu_loja"]
+anchors_preset = -1
+anchor_top = -0.058163665
+anchor_bottom = -0.058163665
+offset_left = 5.9999695
+offset_top = 21.485363
+offset_right = 82.93173
+offset_bottom = 121.48536
+theme_override_colors/font_color = Color(0.39688927, 0.39688927, 0.39688924, 1)
+theme_override_colors/font_hovered_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hovered_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/guide_color = Color(0.69803923, 0.69803923, 0.69803923, 0)
+theme_override_constants/h_separation = 4
+theme_override_font_sizes/font_size = 8
+theme_override_styles/panel = SubResource("StyleBoxEmpty_orj5g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_01kpq")
+theme_override_styles/hovered = SubResource("StyleBoxEmpty_8c340")
+theme_override_styles/hovered_selected = SubResource("StyleBoxEmpty_45nkh")
+theme_override_styles/hovered_selected_focus = SubResource("StyleBoxEmpty_mtw28")
+theme_override_styles/selected = SubResource("StyleBoxEmpty_2ka1p")
+theme_override_styles/selected_focus = SubResource("StyleBoxEmpty_7rhuj")
+theme_override_styles/cursor_unfocused = SubResource("StyleBoxEmpty_ysdx3")
+theme_override_styles/cursor = SubResource("StyleBoxEmpty_t8pok")
+allow_search = false
+item_count = 4
+item_0/text = "COLETAR"
+item_1/text = "NABO              120G"
+item_2/text = "MORANGO     240G"
+item_3/text = "ABACAXI         350G"
+metadata/_edit_use_anchors_ = true
+
+[node name="tree_aut" type="Sprite2D" parent="."]
+position = Vector2(396.5, 107)
+texture = ExtResource("6_45nkh")
+
+[node name="fim_de_jogo" type="Sprite2D" parent="."]
+scale = Vector2(1, 0.8542857)
+texture = ExtResource("6_8c340")
+centered = false
+
+[node name="Texto" type="RichTextLabel" parent="fim_de_jogo"]
+offset_left = 184.0
+offset_top = 64.0
+offset_right = 368.0
+offset_bottom = 112.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+text = "Fim do jogo"
+
+[node name="dia" type="RichTextLabel" parent="fim_de_jogo"]
+offset_left = 48.0
+offset_top = 136.0
+offset_right = 464.0
+offset_bottom = 184.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "Você chegou no dia "
+
+[node name="pontuação" type="RichTextLabel" parent="fim_de_jogo"]
+offset_left = 48.0
+offset_top = 184.0
+offset_right = 464.0
+offset_bottom = 227.0903
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "Você terminou com "
+
+[node name="text" type="RichTextLabel" parent="fim_de_jogo"]
+offset_left = 28.0
+offset_top = 304.3478
+offset_right = 300.0
+offset_bottom = 321.3478
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 12
+text = "Recarregue a página para jogar novamente!"
+fit_content = true
+scroll_active = false
+
+[node name="novo_jogo" type="Button" parent="fim_de_jogo"]
+offset_left = 355.0
+offset_top = 289.13043
+offset_right = 517.0
+offset_bottom = 321.9063
+text = "JOGAR NOVAMENTE"
+
+[connection signal="input_event" from="background/jardim" to="." method="_on_jardim_input_event"]
+[connection signal="button_up" from="prox_dia" to="." method="_on_prox_dia_button_up"]
+[connection signal="pressed" from="tomato_button" to="." method="_on_tomato_button_pressed"]
+[connection signal="item_clicked" from="menu_loja/Loja" to="." method="_on_item_list_item_clicked"]
+[connection signal="item_selected" from="menu_loja/Loja" to="." method="_on_as_item_selected"]
+[connection signal="pressed" from="fim_de_jogo/novo_jogo" to="." method="_on_novo_jogo_pressed"]

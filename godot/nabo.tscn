@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://dgiijc3juia01"]
+
+[ext_resource type="PackedScene" uid="uid://b7eqpri0p1jxa" path="res://planta.tscn" id="1_nf8vd"]
+[ext_resource type="Texture2D" uid="uid://hjabwimcmbww" path="res://sprites/crops.png" id="2_vvyjj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpmnj"]
+atlas = ExtResource("2_vvyjj")
+region = Rect2(34, 1, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpbbg"]
+atlas = ExtResource("2_vvyjj")
+region = Rect2(0, 26, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4yyu"]
+atlas = ExtResource("2_vvyjj")
+region = Rect2(17, 26, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ip1r"]
+atlas = ExtResource("2_vvyjj")
+region = Rect2(34, 26, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7iuwh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpmnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpbbg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4yyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ip1r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="planta" instance=ExtResource("1_nf8vd")]
+custo = 120
+valor = 140
+estagio = [0, 1, 1, 2, 3]
+
+[node name="animated" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_7iuwh")

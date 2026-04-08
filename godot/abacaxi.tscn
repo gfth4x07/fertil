@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://bhbglkau0sffh"]
+
+[ext_resource type="PackedScene" uid="uid://b7eqpri0p1jxa" path="res://planta.tscn" id="1_e4g23"]
+[ext_resource type="Texture2D" uid="uid://hjabwimcmbww" path="res://sprites/crops.png" id="2_byla5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feh5y"]
+atlas = ExtResource("2_byla5")
+region = Rect2(34, 1, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ismp"]
+atlas = ExtResource("2_byla5")
+region = Rect2(102, 126, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jr3th"]
+atlas = ExtResource("2_byla5")
+region = Rect2(119, 126, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xu7dg"]
+atlas = ExtResource("2_byla5")
+region = Rect2(136, 126, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5i12l"]
+atlas = ExtResource("2_byla5")
+region = Rect2(153, 126, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvy1f"]
+atlas = ExtResource("2_byla5")
+region = Rect2(170, 126, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f5gso"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_feh5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ismp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jr3th")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xu7dg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5i12l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvy1f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="abacaxi" instance=ExtResource("1_e4g23")]
+custo = 350
+valor = 350
+estagio = [0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 5]
+colheita_recorrente = true
+estagio_pos_colheita = 17
+
+[node name="animated" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_f5gso")
