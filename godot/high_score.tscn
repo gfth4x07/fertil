@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://86hlwpqinb08"]
+[gd_scene load_steps=3 format=3 uid="uid://86hlwpqinb08"]
 
 [ext_resource type="Script" uid="uid://b43rgns42iswd" path="res://high_score.gd" id="1_y2wna"]
+[ext_resource type="FontFile" uid="uid://dt3tjixq6etm1" path="res://RobotoMono-VariableFont_wght.ttf" id="2_6ub14"]
 
 [node name="high_score" type="Node2D"]
 script = ExtResource("1_y2wna")
@@ -44,11 +45,12 @@ offset_right = 366.0
 offset_bottom = 37.0
 text = "PLACAR"
 
-[node name="Leader_bord" type="RichTextLabel" parent="."]
-offset_left = 305.0
+[node name="Leaderboard" type="RichTextLabel" parent="."]
+offset_left = 279.0
 offset_top = 45.0
 offset_right = 534.0
 offset_bottom = 290.0
+theme_override_fonts/normal_font = ExtResource("2_6ub14")
 
 [connection signal="pressed" from="enviar" to="." method="_on_enviar_pressed"]
 [connection signal="focus_entered" from="nome" to="." method="_on_nome_focus_entered"]

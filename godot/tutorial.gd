@@ -1,12 +1,10 @@
 extends Node2D
 
 var textos = [
-	"Olá!
-	Seja bem vindo ao f(e)rtil!
-	Um jogo onde se deve plantar para conseguir a maior quantidade
-	 de dinheiro e aprender enquanto se diverte!",
+	"Olá! Seja bem vindo ao f(e)rtil!
+Um jogo onde se deve plantar para conseguir a maior quantidade de dinheiro e aprender enquanto se diverte!",
 	"Bem vindo ao tutorial.
-	Aqui você aprenderá como jogar.",
+Aqui você aprenderá como jogar.",
 	"Aqui mostra o dinheiro que você tem.",
 	"Aqui você pode selecionar o tipo de planta que irá plantar",
 	"Selecione o nabo",
@@ -14,9 +12,9 @@ var textos = [
 	"Parabéns, você plantou um nabo.",
 	"Agora clique em próximo dia.",
 	"O Nabo cresceu!
-	Continue passando os dias até que ele cresça completamente.",
+Continue passando os dias até que ele cresça completamente.",
 	"O Nabo cresceu!
-	Continue passando os dias até que ele cresça completamente.",
+Continue passando os dias até que ele cresça completamente.",
 	"O Nabo está pronto para ser colhido.",
 	"Clique nele para colher.",
 	"Parabéns, você colheu",
@@ -73,6 +71,7 @@ func _on_proximo_pressed() -> void:
 		$proximo.show()
 	if global.etapa_tutorial == 13:
 		$proximo.hide()
+		$rita.hide()
 		$rita.position = Vector2(229,122)
 		$fala.position = Vector2(63,157)
 		$voltar_menu.show()
