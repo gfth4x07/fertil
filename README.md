@@ -24,3 +24,5 @@ para
 while !http_node.is_inside_tree():
 ```
 Pois quando o placar era executado como sena funcionava, mas durante o jogo não.
+
+Uma maneira fácil de limpar o highscore é digitar o apelido DELETAR_TUDO

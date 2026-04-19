@@ -1,10 +1,11 @@
 extends Node
 
 var game_mode = "debug"
-var tutorial_mode =""
+var tutorial_mode = ""
 var etapa_tutorial = 0
 var score = 1000
 var scoreId = ""
+var score_table = "main"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
