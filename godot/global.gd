@@ -1,6 +1,7 @@
 extends Node
 
 var game_mode = "debug"
+var tutorial_mode =""
 var etapa_tutorial = 0
 var score = 1000
 var scoreId = ""

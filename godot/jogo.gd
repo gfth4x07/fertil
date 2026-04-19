@@ -39,7 +39,8 @@ func _ready() -> void:
 	$tree_aut.hide()
 	
 	if global.game_mode == "tutorial":
-		tutorial()
+		global.etapa_tutorial = 0
+		$tutorial.tutorial()
 	else:
 		$tutorial.hide()
 
@@ -102,7 +103,7 @@ func colheu_planta(valor: int):
 	gold += valor
 	$Gold.text = "Gold: "+str(gold)+"G"
 	if(global.game_mode == "tutorial"):
-		$tutorial._on_proximo_pressed()
+		$tutorial.tutorial()
 		
 func inicia_outono():
 	get_tree().call_group("plantas","MORRER")
@@ -126,17 +127,3 @@ func _on_novo_jogo_pressed() -> void:
 
 func _on_placar_pressed() -> void:
 	get_tree().change_scene_to_file("res://high_score.tscn")
-
-
-func tutorial():
-	global.etapa_tutorial = 0
-	$tutorial/seta.hide()
-	$tutorial.show()
-	$background/jardim/CollisionPolygon2D.disabled = true
-	$prox_dia.disabled = true
-	#TODO FAZER UM LOOP
-	$menu_loja/Loja.set_item_disabled(0,true)
-	$menu_loja/Loja.set_item_disabled(1,true)
-	$menu_loja/Loja.set_item_disabled(2,true)
-	$menu_loja/Loja.set_item_disabled(3,true)
-	

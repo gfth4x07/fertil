@@ -21,11 +21,12 @@ Continue passando os dias até que ele cresça completamente.",
 	"FIM DO TUTORIAL"]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$rita.position = Vector2(55,255)
-	$fala.position = Vector2(111,213)
-	global.etapa_tutorial = 0
-	$fala.text=textos[global.etapa_tutorial]
-	$voltar_menu.hide()
+	$rita.position = Vector2(229,122)
+	$fala.position = Vector2(63,157)
+
+	#global.etapa_tutorial = 0
+	#$fala.text=textos[global.etapa_tutorial]
+
 
 
 
@@ -33,9 +34,23 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func _on_proximo_pressed() -> void:
-	global.etapa_tutorial += 1
+func tutorial():
+	print("OIOIOI ",global.etapa_tutorial," # ",textos[global.etapa_tutorial])
+	if global.etapa_tutorial == 0:
+		$seta.hide()
+		$".".show()
+		$"../background/jardim/CollisionPolygon2D".disabled = true
+		$"../prox_dia".disabled = true
+		#TODO FAZER UM LOOP
+		$"../menu_loja/Loja".set_item_disabled(0,true)
+		$"../menu_loja/Loja".set_item_disabled(1,true)
+		$"../menu_loja/Loja".set_item_disabled(2,true)
+		$"../menu_loja/Loja".set_item_disabled(3,true)
+		
+
 	if global.etapa_tutorial == 2:
+		$rita.position = Vector2(55,255)
+		$fala.position = Vector2(111,213)
 		$seta.position = Vector2(400,24)
 		$seta.show()
 	if global.etapa_tutorial == 3:
@@ -74,32 +89,30 @@ func _on_proximo_pressed() -> void:
 		$rita.hide()
 		$rita.position = Vector2(229,122)
 		$fala.position = Vector2(63,157)
-		$voltar_menu.show()
+		$"../voltar_menu".position = Vector2(176,256)
+		$"../voltar_menu".show()
+		
 	$fala.text = textos[global.etapa_tutorial]
 	$Label.text = str(global.etapa_tutorial)
+	global.etapa_tutorial += 1
+	print("XAUXAUXAU ",global.etapa_tutorial)
 
-
+func _on_tutorial_proximo_pressed() -> void:
+	tutorial()
 
 
 func _on_loja_item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
 	if(global.game_mode == "tutorial"):
-		_on_proximo_pressed()
-	pass # Replace with function body.
-
+		tutorial()
 
 func _on_jardim_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		if(global.game_mode == "tutorial"):
-			_on_proximo_pressed()
-	pass # Replace with function body.
-
+			tutorial()
 
 func _on_prox_dia_button_up() -> void:
 	if(global.game_mode == "tutorial"):
-		_on_proximo_pressed()
-	pass # Replace with function body.
-
+		tutorial()
 
 func _on_voltar_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://menu_modos.tscn")
-	pass # Replace with function body.

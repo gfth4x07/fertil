@@ -216,6 +216,13 @@ offset_right = 224.0
 offset_bottom = 277.4247
 text = "PLACAR"
 
+[node name="voltar_menu" type="Button" parent="."]
+offset_left = 9.0
+offset_top = 6.0
+offset_right = 136.0
+offset_bottom = 37.0
+text = "Voltar ao menu"
+
 [node name="tutorial" type="Node2D" parent="."]
 script = ExtResource("10_orj5g")
 
@@ -225,10 +232,10 @@ scale = Vector2(0.08885544, 0.08885543)
 texture = ExtResource("11_01kpq")
 
 [node name="fala" type="RichTextLabel" parent="tutorial"]
-offset_left = 63.0
-offset_top = 138.0
-offset_right = 396.01807
-offset_bottom = 238.0
+offset_left = 60.0
+offset_top = 153.0
+offset_right = 393.01807
+offset_bottom = 253.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_orj5g")
 
 [node name="proximo" type="Button" parent="tutorial"]
@@ -237,13 +244,6 @@ offset_top = 226.0
 offset_right = 535.0
 offset_bottom = 257.0
 text = "Próximo"
-
-[node name="voltar_menu" type="Button" parent="tutorial"]
-offset_left = 162.0
-offset_top = 206.0
-offset_right = 289.0
-offset_bottom = 237.0
-text = "Voltar ao menu"
 
 [node name="seta" type="Sprite2D" parent="tutorial"]
 position = Vector2(297, 272)
@@ -269,5 +269,5 @@ text = "1"
 [connection signal="item_selected" from="menu_loja/Loja" to="." method="_on_as_item_selected"]
 [connection signal="pressed" from="fim_de_jogo/novo_jogo" to="." method="_on_novo_jogo_pressed"]
 [connection signal="pressed" from="fim_de_jogo/placar" to="." method="_on_placar_pressed"]
-[connection signal="pressed" from="tutorial/proximo" to="tutorial" method="_on_proximo_pressed"]
-[connection signal="pressed" from="tutorial/voltar_menu" to="tutorial" method="_on_voltar_menu_pressed"]
+[connection signal="pressed" from="voltar_menu" to="tutorial" method="_on_voltar_menu_pressed"]
+[connection signal="pressed" from="tutorial/proximo" to="tutorial" method="_on_tutorial_proximo_pressed"]
