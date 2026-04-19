@@ -17,7 +17,12 @@ Continue passando os dias até que ele cresça completamente.",
 Continue passando os dias até que ele cresça completamente.",
 	"O Nabo está pronto para ser colhido.",
 	"Clique nele para colher.",
-	"Parabéns, você colheu",
+	"Parabéns, você colheu!",
+	"Cuidado pois se você não colher sua planta morre.",
+	"Cuidado pois se você não colher sua planta morre.",# TODO ou string vazia pra animação?
+	"Se você ficar sem dinheiro para plantar, você perde.",
+	"Além diso quando chegar dia 30 a primavera acabará e no dia seguinte o jogo acaba.",
+	"Tente fazer o máximo possível de dinheiro até lá.",
 	"FIM DO TUTORIAL"]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -37,6 +42,7 @@ func _process(_delta: float) -> void:
 func tutorial():
 	print("OIOIOI ",global.etapa_tutorial," # ",textos[global.etapa_tutorial])
 	if global.etapa_tutorial == 0:
+		$rita_smile.hide()
 		$seta.hide()
 		$".".show()
 		$"../background/jardim/CollisionPolygon2D".disabled = true
@@ -84,14 +90,24 @@ func tutorial():
 		nabo.get_child(0).disabled = false
 	if global.etapa_tutorial == 12: #Colheu o nabo
 		$proximo.show()
-	if global.etapa_tutorial == 13:
+	if global.etapa_tutorial == 13: #Aviso não colheirta
+		pass
+	if global.etapa_tutorial == 14: #Animação não colheita
+		pass
+	if global.etapa_tutorial == 15: #Explicação de sem dinheiro = perder
+		pass
+	if global.etapa_tutorial == 16: # 30 dias -> fim do jogo.
+		pass
+	if global.etapa_tutorial == 17: # Tente fazer o máximo de dinheiro até lá
+		pass
+	if global.etapa_tutorial == 18: #FIM
 		$proximo.hide()
 		$rita.hide()
+		$rita_smile.show()
 		$rita.position = Vector2(229,122)
 		$fala.position = Vector2(63,157)
 		$"../voltar_menu".position = Vector2(176,256)
 		$"../voltar_menu".show()
-		
 	$fala.text = textos[global.etapa_tutorial]
 	$Label.text = str(global.etapa_tutorial)
 	global.etapa_tutorial += 1

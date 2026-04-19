@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://da3slwchrjl3m"]
+[gd_scene load_steps=30 format=3 uid="uid://da3slwchrjl3m"]
 
 [ext_resource type="Script" uid="uid://bq0n7p6rm8rsb" path="res://jogo.gd" id="1_45nkh"]
 [ext_resource type="Texture2D" uid="uid://7wbo85a3bkrc" path="res://sprites/background.png" id="2_ysdx3"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://bvh61cwst5xtc" path="res://tutorial.gd" id="10_orj5g"]
 [ext_resource type="Texture2D" uid="uid://r8v0xrq35yj" path="res://sprites/avatar/rita.png" id="11_01kpq"]
 [ext_resource type="Texture2D" uid="uid://bcibypb2mepie" path="res://sprites/seta.png" id="12_01kpq"]
+[ext_resource type="Texture2D" uid="uid://cqp0wesmdubvy" path="res://sprites/avatar/smile.png" id="13_2ka1p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msvki"]
 
@@ -258,6 +259,9 @@ offset_bottom = 299.0
 text = "1"
 
 [node name="rita_smile" type="Sprite2D" parent="tutorial"]
+position = Vector2(209.99998, 96.99999)
+scale = Vector2(0.22150004, 0.22150004)
+texture = ExtResource("13_2ka1p")
 
 [connection signal="input_event" from="background/jardim" to="." method="_on_jardim_input_event"]
 [connection signal="input_event" from="background/jardim" to="tutorial" method="_on_jardim_input_event"]

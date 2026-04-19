@@ -4,7 +4,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	global.game_mode = "debug"
+	global.tutorial_mode = ""
 	pass # Replace with function body.
 
 
