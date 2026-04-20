@@ -11,6 +11,7 @@ func _ready() -> void:
 	
 	$alerta.hide()
 	$Texto.text = "Parabéns! \n\n Voocê fez %s pontos \n\n Digite seu apelido"%global.score
+	$nome.text = global.scoreId
 	mostrar_placar()
 
 
@@ -30,6 +31,7 @@ func _on_enviar_pressed() -> void:
 		#$enviar.disabled = true
 	
 	elif $nome.text != "":
+		global.scoreId =$nome.text
 		var _sw_save: Dictionary = await SilentWolf.Scores.save_score(
 			$nome.text, global.score,global.score_table).sw_save_score_complete
 		#global.scoreId = sw_save
