@@ -238,6 +238,7 @@ offset_top = 153.0
 offset_right = 393.01807
 offset_bottom = 253.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_orj5g")
+bbcode_enabled = true
 
 [node name="proximo" type="Button" parent="tutorial"]
 offset_left = 456.0
@@ -247,7 +248,7 @@ offset_bottom = 257.0
 text = "Próximo"
 
 [node name="seta" type="Sprite2D" parent="tutorial"]
-position = Vector2(297, 272)
+position = Vector2(402.00003, 73)
 scale = Vector2(0.4210527, 0.36494255)
 texture = ExtResource("12_01kpq")
 
