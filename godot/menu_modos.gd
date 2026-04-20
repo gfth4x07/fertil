@@ -15,7 +15,10 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://jogo.tscn")
+	if global.game_mode == "placar":
+		get_tree().change_scene_to_file("res://high_score.tscn")
+	else:
+		get_tree().change_scene_to_file("res://jogo.tscn")
 
 
 
@@ -26,6 +29,10 @@ func _on_option_button_item_selected(index: int) -> void:
 	elif index == 1:
 		global.game_mode = "tutorial"
 		$"Tutorial mode".show()
+		$"Tutorial mode".select(0)
+	elif index == 2:
+		global.game_mode = "placar"
+		$"Tutorial mode".hide()
 
 func _on_tutorial_mode_item_selected(index: int) -> void:
 	if index == 0:
