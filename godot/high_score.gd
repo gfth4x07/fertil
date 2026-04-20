@@ -49,3 +49,7 @@ func mostrar_placar():
 		$Leaderboard.text += "#%s - %-12s %5d\n"% [pos, score.player_name,score.score]
 		pos +=1
 	
+
+
+func _on_voltar_pressed() -> void:
+	get_tree().change_scene_to_file("res://menu_modos.tscn")
