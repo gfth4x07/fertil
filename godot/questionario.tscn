@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c7grhb8s0qeih"]
+
+[node name="Questionario" type="Node2D"]
+
+[node name="RespostaCustoMorango" type="LineEdit" parent="."]
+offset_left = 83.0
+offset_top = 115.0
+offset_right = 151.5625
+offset_bottom = 146.0
