@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://da3slwchrjl3m"]
+[gd_scene load_steps=32 format=3 uid="uid://da3slwchrjl3m"]
 
 [ext_resource type="Script" uid="uid://bq0n7p6rm8rsb" path="res://jogo.gd" id="1_45nkh"]
 [ext_resource type="Texture2D" uid="uid://7wbo85a3bkrc" path="res://sprites/background.png" id="2_ysdx3"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://bvh61cwst5xtc" path="res://tutorial.gd" id="10_orj5g"]
 [ext_resource type="Texture2D" uid="uid://r8v0xrq35yj" path="res://sprites/avatar/rita.png" id="11_01kpq"]
 [ext_resource type="Texture2D" uid="uid://bcibypb2mepie" path="res://sprites/seta.png" id="12_01kpq"]
+[ext_resource type="Script" uid="uid://qh7x86ku2boj" path="res://subscript_effect.gd" id="12_7rhuj"]
 [ext_resource type="Texture2D" uid="uid://cqp0wesmdubvy" path="res://sprites/avatar/smile.png" id="13_2ka1p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msvki"]
@@ -45,6 +46,10 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t8pok"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_orj5g"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_msvki"]
+script = ExtResource("12_7rhuj")
+metadata/_custom_type_script = "uid://qh7x86ku2boj"
 
 [node name="jogo_principal" type="Node2D"]
 script = ExtResource("1_45nkh")
@@ -236,9 +241,10 @@ texture = ExtResource("11_01kpq")
 offset_left = 60.0
 offset_top = 153.0
 offset_right = 393.01807
-offset_bottom = 253.0
+offset_bottom = 192.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_orj5g")
 bbcode_enabled = true
+custom_effects = [SubResource("RichTextEffect_msvki")]
 
 [node name="proximo" type="Button" parent="tutorial"]
 offset_left = 456.0

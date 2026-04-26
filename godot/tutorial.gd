@@ -144,7 +144,16 @@ func tutorial():
 			$"../voltar_menu".show()
 	
 	if global.tutorial_mode == "sequencias":
-		pass
+		if global.etapa_tutorial == 1:
+			$rita.position = Vector2(55,255)
+			$fala.position = Vector2(111,213)
+		if global.etapa_tutorial == 2:
+			pass
+		if global.etapa_tutorial == 3:
+			pass
+		if global.etapa_tutorial == 4:
+			$rita.position = Vector2(55,255)
+			$fala.position = Vector2(111,213)
 		if global.etapa_tutorial == 18: #FIM
 			$proximo.hide()
 			$rita.hide()
@@ -243,8 +252,19 @@ Veja que o aumentou 20G",
 var texto_sequencias = [
 	"Olá! Seja bem vindo ao f(e)rtil!
 Um jogo onde se deve plantar para conseguir a maior quantidade de dinheiro e aprender enquanto se diverte!",
-	"SEQ 1",
-	"SEQ 2",
-	"SEQ 3",
-	"SEQ 4",
+	"Bem-vindo ao tutorial de sequências, nele você aprenderá sobre padrões numéricos. ",
+	"Vamos lá, plante um morango.",
+	"Nosso objetivo será anotar os dias de colheita.
+	
+Avance para a primeira colheita.",
+	"Avance para a primeira colheita.",
+	"Avance para a primeira colheita.",
+	"Avance para a primeira colheita.",
+	"Avance para a primeira colheita.",
+	"Avance para a primeira colheita.",
+	"Chegamos na primeira colheita! Ela foi no dia 8.",
+	"Já a nossa segunda colheita foi realizada no dia 11. Vamos continuar!",
+	"Olha só, os dias da colheita! Note que esses dias formam uma sequência e que damos o nome de [b]termo[/b]. Então o dia da primeira colheita é o 1º termo da sequência, também chamado de [b]a[sub]1[/sub][/b]",
+	"Pensando que colhemos nos dias 8, 11, 14 qual dia você acha que será o próximo?",
+	"Agora avance os dias para verificar.",
 	"FIM DO TUTORIAL"]

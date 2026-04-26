@@ -33,11 +33,12 @@ func _on_option_button_item_selected(index: int) -> void:
 	elif index == 2:
 		global.game_mode = "placar"
 		$"Tutorial mode".hide()
+	
 
 func _on_tutorial_mode_item_selected(index: int) -> void:
 	if index == 0:
 		global.tutorial_mode = "como_jogar"
 	elif index == 1:
 		global.tutorial_mode = "financas"
-	elif index == 1:
+	elif index == 2:
 		global.tutorial_mode = "sequencias"
