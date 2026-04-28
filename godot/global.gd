@@ -1,9 +1,9 @@
 extends Node
 
-var game_mode = "debug"
+var game_mode = ""
 var tutorial_mode = ""
 var etapa_tutorial = 0
-var score = 1000
+var score = 000
 var scoreId = ""
 var score_table = "main"
 

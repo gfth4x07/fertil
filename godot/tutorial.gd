@@ -5,7 +5,7 @@ const Nabo = preload("res://nabo.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$rita.position = Vector2(229,122)
-	$fala.position = Vector2(63,157)
+	#$fala.position = Vector2(63,157)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,6 +30,7 @@ func tutorial():
 		$rita_smile.hide()
 		$seta.hide()
 		$".".show()
+		$bloco_de_notas.hide()
 		$"../background/jardim/CollisionPolygon2D".disabled = true
 		$"../prox_dia".disabled = true
 		#TODO FAZER UM LOOP
@@ -78,9 +79,9 @@ func tutorial():
 		if global.etapa_tutorial == 13: #Aviso não colheita
 			pass
 		if global.etapa_tutorial == 14: #Animação não colheita
+			$proximo.hide()
 			var nova_planta = Nabo.instantiate()
 			nova_planta.position = Vector2(120,120)
-			$proximo.hide()
 			$"../background/jardim/CollisionPolygon2D".add_child(nova_planta)
 			
 			await get_tree().create_timer(2).timeout
@@ -114,7 +115,6 @@ func tutorial():
 		if global.etapa_tutorial == 3:
 			$seta.position = Vector2(400,73)
 		if global.etapa_tutorial == 4:
-			print("$$$$$$")
 			$proximo.hide()
 			$"../menu_loja/Loja".set_item_disabled(1,false)
 		if global.etapa_tutorial == 5:
@@ -145,16 +145,43 @@ func tutorial():
 	
 	if global.tutorial_mode == "sequencias":
 		if global.etapa_tutorial == 1:
-			$rita.position = Vector2(55,255)
-			$fala.position = Vector2(111,213)
+			pass
+			#$rita.position = Vector2(55,255)
+			#$fala.position = Vector2(111,213)
 		if global.etapa_tutorial == 2:
-			pass
+			$proximo.hide()
+			$"../background/jardim/CollisionPolygon2D".disabled = false
+			$"../menu_loja/Loja".set_item_disabled(2,false)
+			
 		if global.etapa_tutorial == 3:
-			pass
+			$bloco_de_notas/linha1.text = ""
+			$bloco_de_notas.show()
+			$"../background/jardim/CollisionPolygon2D".disabled = true
+			$"../prox_dia".disabled = false
 		if global.etapa_tutorial == 4:
-			$rita.position = Vector2(55,255)
-			$fala.position = Vector2(111,213)
-		if global.etapa_tutorial == 18: #FIM
+			pass
+		if global.etapa_tutorial == 10:
+			$bloco_de_notas/linha1.text = "8"
+			$"../prox_dia".disabled = true
+		if global.etapa_tutorial == 11:
+			$"../prox_dia".disabled = false
+		if global.etapa_tutorial == 14:
+			$"../prox_dia".disabled = true
+		if global.etapa_tutorial == 15:
+			$bloco_de_notas/linha1.text += ", 11"
+			$"../prox_dia".disabled = false
+		if global.etapa_tutorial == 18:
+			$"../prox_dia".disabled = true
+		if global.etapa_tutorial == 19:
+			$bloco_de_notas/linha1.text += ", 14"
+			$proximo.show()
+		if global.etapa_tutorial == 15:
+			pass
+		if global.etapa_tutorial == 15:
+			pass
+		if global.etapa_tutorial == 15:
+			pass
+		if global.etapa_tutorial == 60: #FIM
 			$proximo.hide()
 			$rita.hide()
 			$rita_smile.show()
@@ -173,7 +200,7 @@ func _on_tutorial_proximo_pressed() -> void:
 
 
 func _on_loja_item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
-	if(global.game_mode == "tutorial"):
+	if(global.game_mode == "tutorial" and global.tutorial_mode in ["como_jogar","financas"]):
 		tutorial()
 
 func _on_jardim_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -214,8 +241,8 @@ Continue passando os dias até que ele cresça completamente.",
 Dessa vez a planta será por minha conta.",
 	"Cuidado pois se você não colher sua planta morre.
 Que triste a planta morreu.",
-	"Se você ficar sem dinheiro para plantare todas as suas plantas morrerem você perde o jogo.",
-	"Outra coisa, a primavera tem 30 dias, no dia seguinte todas as plantas morrerão e o jogo termina.",
+	"Se você ficar sem dinheiro para plantar e todas as suas plantas morrerem você perde o jogo.",
+	"Outra coisa, a primavera tem 30 dias. No dia seguinte todas as plantas morrerão e o jogo termina.",
 	"Tente fazer o máximo possível de dinheiro até lá.",
 	"FIM DO TUTORIAL"]
 
@@ -232,7 +259,7 @@ Esse valor será gasto por você, por isso chamamos ele de [color='red']gasto[/c
 	"Plante um nabo.",
 	"Veja que o seu dinheiro diminuiu.
 Agora você só tem 180G",
-	"Agora avance os dias para colher o nabo.",
+	"Agora avance os dias para colher o nabo.",  # TODO fazer umas brincadeiras aqui?
 	"Agora avance os dias para colher o nabo.",
 	"Agora avance os dias para colher o nabo.",
 	"Agora avance os dias para colher o nabo.",
@@ -246,7 +273,7 @@ Então seu [color='green']lucro[/color] foi de 20G.",
 	"Também podemos pensar no lucro como tinhamos 300G e depois 320G.
 Veja que o aumentou 20G",
 	"A diferença do [color='green']lucro[/color] para a [color='yellow']receita[/color] é que o [color='green']lucro[/color] considera o [color='red']gasto[/color] envolvido, já a [color='yellow']receita[/color] [b]não[/b] considera.",
-	"FIM DO TUTORIAL"]
+	"FIM DO TUTORIAL"] # TODO Lucro variável com o morango
 
 
 var texto_sequencias = [
@@ -257,14 +284,35 @@ Um jogo onde se deve plantar para conseguir a maior quantidade de dinheiro e apr
 	"Nosso objetivo será anotar os dias de colheita.
 	
 Avance para a primeira colheita.",
-	"Avance para a primeira colheita.",
-	"Avance para a primeira colheita.",
-	"Avance para a primeira colheita.",
-	"Avance para a primeira colheita.",
-	"Avance para a primeira colheita.",
-	"Chegamos na primeira colheita! Ela foi no dia 8.",
-	"Já a nossa segunda colheita foi realizada no dia 11. Vamos continuar!",
-	"Olha só, os dias da colheita! Note que esses dias formam uma sequência e que damos o nome de [b]termo[/b]. Então o dia da primeira colheita é o 1º termo da sequência, também chamado de [b]a[sub]1[/sub][/b]",
-	"Pensando que colhemos nos dias 8, 11, 14 qual dia você acha que será o próximo?",
+	"Avance os dias para a primeira colheita.",
+	"Avance os dias para a primeira colheita.",
+	"Avance os dias para a primeira colheita.",
+	"Avance os dias para a primeira colheita.",
+	"Avance os dias para a primeira colheita.",
+	"Avance os dias para a primeira colheita.",
+	"Chegamos na primeira colheita! Ela foi no dia 8.
+Colha o morango!", #  10
+	"Que dia será a próxima colheita?",
+	"Que dia será a próxima colheita?",
+	"Que dia será a próxima colheita?",
+	"Que dia será a próxima colheita?
+Nasceu!",
+	"A nossa segunda colheita foi realizada no dia 11.
+Vamos continuar!", # 15
+	"Vamos continuar!",  
+	"Vamos continuar!",
+	"Dia 14, nossa terceira colheita.
+Olha só, os dias da colheita! Eles formam uma sequência.",
+	"A cada número da sequênica damos o nome de [b]termo[/b]. Então o dia da primeira colheita é o 1º termo da nossa sequência.",
+	"Ou seja o 1º termo é 8.
+O 2º termo é 11, e o 3º é 14.
+Também podemos escrever como [b]a[sub][font_size=10]1[/font_size][/sub][/b] = 8, [b]a[sub][font_size=10]2[/font_size][/sub][/b] = 1 e [b]a[sub][font_size=10]3[/font_size][/sub][/b] = 14",
+	"Qual dia você acha que será a próxima colheita?
+Ou seja, o 4º termo, ou ainda [b]a[sub][font_size=10]4[/font_size][/sub][/b]",
 	"Agora avance os dias para verificar.",
+	"Agora avance os dias para verificar.",
+	"Agora avance os dias para verificar.",
+	"FIM DO TUTORIAL",
+	"FIM DO TUTORIAL",
+	"FIM DO TUTORIAL",
 	"FIM DO TUTORIAL"]

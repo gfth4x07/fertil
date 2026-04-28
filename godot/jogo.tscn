@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://da3slwchrjl3m"]
+[gd_scene load_steps=33 format=3 uid="uid://da3slwchrjl3m"]
 
 [ext_resource type="Script" uid="uid://bq0n7p6rm8rsb" path="res://jogo.gd" id="1_45nkh"]
 [ext_resource type="Texture2D" uid="uid://7wbo85a3bkrc" path="res://sprites/background.png" id="2_ysdx3"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bcibypb2mepie" path="res://sprites/seta.png" id="12_01kpq"]
 [ext_resource type="Script" uid="uid://qh7x86ku2boj" path="res://subscript_effect.gd" id="12_7rhuj"]
 [ext_resource type="Texture2D" uid="uid://cqp0wesmdubvy" path="res://sprites/avatar/smile.png" id="13_2ka1p"]
+[ext_resource type="Texture2D" uid="uid://043hc88h7ovr" path="res://sprites/bloco_de_notas.png" id="15_msvki"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msvki"]
 
@@ -238,12 +239,13 @@ scale = Vector2(0.08885544, 0.08885543)
 texture = ExtResource("11_01kpq")
 
 [node name="fala" type="RichTextLabel" parent="tutorial"]
-offset_left = 60.0
-offset_top = 153.0
-offset_right = 393.01807
-offset_bottom = 192.0
+offset_left = 70.0
+offset_top = 177.0
+offset_right = 400.0
+offset_bottom = 226.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_orj5g")
 bbcode_enabled = true
+fit_content = true
 custom_effects = [SubResource("RichTextEffect_msvki")]
 
 [node name="proximo" type="Button" parent="tutorial"]
@@ -269,6 +271,23 @@ text = "1"
 position = Vector2(209.99998, 96.99999)
 scale = Vector2(0.22150004, 0.22150004)
 texture = ExtResource("13_2ka1p")
+
+[node name="bloco_de_notas" type="Node2D" parent="tutorial"]
+position = Vector2(18, 51)
+
+[node name="img" type="Sprite2D" parent="tutorial/bloco_de_notas"]
+position = Vector2(55, 60)
+scale = Vector2(0.3002451, 0.3002451)
+texture = ExtResource("15_msvki")
+
+[node name="linha1" type="RichTextLabel" parent="tutorial/bloco_de_notas"]
+offset_left = 9.0
+offset_top = 21.0
+offset_right = 90.0
+offset_bottom = 43.0
+theme_override_colors/default_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+text = "8, 11, 14, "
+scroll_active = false
 
 [connection signal="input_event" from="background/jardim" to="." method="_on_jardim_input_event"]
 [connection signal="input_event" from="background/jardim" to="tutorial" method="_on_jardim_input_event"]
