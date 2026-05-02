@@ -30,7 +30,6 @@ func _ready() -> void:
 	
 	$prox_dia.disabled = false
 	$background/jardim/CollisionPolygon2D.disabled = false
-	get_tree().call_group("plantas","queue_free")
 	$fim_de_jogo.hide()
 	$Dia.text = "Dia: "+str(dia)
 	$Gold.text = "Gold: "+str(gold)+"G"
@@ -118,6 +117,7 @@ func fim_de_jogo():
 	global.score = gold
 	$fim_de_jogo.show()
 	$prox_dia.disabled = true
+	get_tree().call_group("plantas","queue_free")
 	#get_tree().paused = true
 
 

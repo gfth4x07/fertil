@@ -1,6 +1,6 @@
 extends Node2D
 
-var idade = 0
+@export var idade = 0
 
 #Essas caracteristicas devem ser alteradas no Inspector para cada tipo de planta
 @export var custo = 0
@@ -14,10 +14,10 @@ var idade_colheita = len(estagio) - 2
 var idade_mortis = len(estagio)
 
 func _ready() -> void:
-	idade = 0
+	#idade = 0
 	idade_colheita = len(estagio) - 2
 	idade_mortis = len(estagio)
-	$animated.set_frame_and_progress(0,1)
+	$animated.set_frame_and_progress(estagio[idade],1)
 
 #função chamada pelo botão prox_dia
 func CRESCER():
