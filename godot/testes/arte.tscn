@@ -6,81 +6,78 @@
 [ext_resource type="PackedScene" uid="uid://orf515r0cgan" path="res://tomate.tscn" id="4_kjbw7"]
 [ext_resource type="PackedScene" uid="uid://bhbglkau0sffh" path="res://abacaxi.tscn" id="5_ahdjt"]
 
-[node name="jogo_principal" instance=ExtResource("1_1eb0h")]
+[node name="jogo_principal2" instance=ExtResource("1_1eb0h")]
 
-[node name="nabo_0" parent="background/jardim" index="1" instance=ExtResource("2_1eb0h")]
-position = Vector2(80, 41)
+[node name="background_jardim#nabo_0" parent="." index="1" instance=ExtResource("2_1eb0h")]
+position = Vector2(80, 88)
 
-[node name="nabo_1" parent="background/jardim" index="2" instance=ExtResource("2_1eb0h")]
-position = Vector2(112, 41)
+[node name="background_jardim#nabo_1" parent="." index="2" instance=ExtResource("2_1eb0h")]
+position = Vector2(112, 88)
 idade = 1
 
-[node name="nabo_2" parent="background/jardim" index="3" instance=ExtResource("2_1eb0h")]
-position = Vector2(144, 41)
+[node name="background_jardim#nabo_2" parent="." index="3" instance=ExtResource("2_1eb0h")]
+position = Vector2(144, 88)
 idade = 3
 
-[node name="nabo_3" parent="background/jardim" index="4" instance=ExtResource("2_1eb0h")]
-position = Vector2(176, 41)
+[node name="background_jardim#nabo_3" parent="." index="4" instance=ExtResource("2_1eb0h")]
+position = Vector2(176, 88)
 idade = 4
 
-[node name="morango_1" parent="background/jardim" index="5" instance=ExtResource("3_w8q1i")]
-position = Vector2(80, 73)
+[node name="background_jardim#morango_1" parent="." index="5" instance=ExtResource("3_w8q1i")]
+position = Vector2(80, 120)
 idade = 1
 
-[node name="morango_2" parent="background/jardim" index="6" instance=ExtResource("3_w8q1i")]
-position = Vector2(112, 73)
+[node name="background_jardim#morango_2" parent="." index="6" instance=ExtResource("3_w8q1i")]
+position = Vector2(112, 120)
 idade = 4
 
-[node name="morango_3" parent="background/jardim" index="7" instance=ExtResource("3_w8q1i")]
-position = Vector2(144, 73)
+[node name="background_jardim#morango_3" parent="." index="7" instance=ExtResource("3_w8q1i")]
+position = Vector2(144, 120)
 idade = 7
 
-[node name="morango_4" parent="background/jardim" index="8" instance=ExtResource("3_w8q1i")]
-position = Vector2(176, 73)
+[node name="background_jardim#morango_4" parent="." index="8" instance=ExtResource("3_w8q1i")]
+position = Vector2(176, 120)
 idade = 8
 
-[node name="tomate_1" parent="background/jardim" index="9" instance=ExtResource("4_kjbw7")]
-position = Vector2(80, 105)
+[node name="background_jardim#tomate_1" parent="." index="9" instance=ExtResource("4_kjbw7")]
+position = Vector2(80, 152)
 idade = 1
 
-[node name="tomate_2" parent="background/jardim" index="10" instance=ExtResource("4_kjbw7")]
-position = Vector2(112, 105)
+[node name="background_jardim#tomate_2" parent="." index="10" instance=ExtResource("4_kjbw7")]
+position = Vector2(112, 152)
 idade = 2
 
-[node name="tomate_3" parent="background/jardim" index="11" instance=ExtResource("4_kjbw7")]
-position = Vector2(144, 105)
+[node name="background_jardim#tomate_3" parent="." index="11" instance=ExtResource("4_kjbw7")]
+position = Vector2(144, 152)
 idade = 4
 
-[node name="tomate_4" parent="background/jardim" index="12" instance=ExtResource("4_kjbw7")]
-position = Vector2(176, 105)
+[node name="background_jardim#tomate_4" parent="." index="12" instance=ExtResource("4_kjbw7")]
+position = Vector2(176, 152)
 idade = 5
 
-[node name="tomate_5" parent="background/jardim" index="13" instance=ExtResource("4_kjbw7")]
-position = Vector2(208, 105)
+[node name="background_jardim#tomate_5" parent="." index="13" instance=ExtResource("4_kjbw7")]
+position = Vector2(208, 152)
 idade = 6
 
-[node name="abacaxi1" parent="background/jardim" index="14" instance=ExtResource("5_ahdjt")]
-position = Vector2(80, 137)
+[node name="background_jardim#abacaxi1" parent="." index="14" instance=ExtResource("5_ahdjt")]
+position = Vector2(80, 184)
 idade = 1
 
-[node name="abacaxi2" parent="background/jardim" index="15" instance=ExtResource("5_ahdjt")]
-position = Vector2(112, 137)
+[node name="background_jardim#abacaxi2" parent="." index="15" instance=ExtResource("5_ahdjt")]
+position = Vector2(112, 184)
 idade = 7
 
-[node name="abacaxi3" parent="background/jardim" index="16" instance=ExtResource("5_ahdjt")]
-position = Vector2(144, 137)
+[node name="background_jardim#abacaxi3" parent="." index="16" instance=ExtResource("5_ahdjt")]
+position = Vector2(144, 184)
 idade = 13
 
-[node name="abacaxi4" parent="background/jardim" index="17" instance=ExtResource("5_ahdjt")]
-position = Vector2(176, 137)
+[node name="background_jardim#abacaxi4" parent="." index="17" instance=ExtResource("5_ahdjt")]
+position = Vector2(176, 184)
 idade = 19
 
-[node name="abacaxi5" parent="background/jardim" index="18" instance=ExtResource("5_ahdjt")]
-position = Vector2(208, 137)
+[node name="background_jardim#abacaxi5" parent="." index="18" instance=ExtResource("5_ahdjt")]
+position = Vector2(208, 184)
 idade = 20
 
 [node name="placar" parent="fim_de_jogo" index="5"]
-visible = false
-
-[node name="tutorial" parent="." index="12"]
 visible = false

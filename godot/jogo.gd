@@ -29,7 +29,7 @@ func _ready() -> void:
 		dias_mes = 5
 	
 	$prox_dia.disabled = false
-	$background/jardim/CollisionPolygon2D.disabled = false
+	$jardim/CollisionPolygon2D.disabled = false
 	$fim_de_jogo.hide()
 	$Dia.text = "Dia: "+str(dia)
 	$Gold.text = "Gold: "+str(gold)+"G"
@@ -76,7 +76,7 @@ func _on_jardim_input_event(_viewport: Node, event: InputEvent, _shape_idx: int)
 			$Gold.text = "Gold: "+str(gold)+"G"
 			nova_planta.position = event.position
 			nova_planta.position.y -= 45
-			$background/jardim/CollisionPolygon2D.add_child(nova_planta)
+			$jardim/CollisionPolygon2D.add_child(nova_planta)
 			nova_planta.planta_colhida.connect(colheu_planta)
 
 
@@ -106,7 +106,7 @@ func colheu_planta(valor: int):
 		
 func inicia_outono():
 	get_tree().call_group("plantas","MORRER")
-	$background/jardim/CollisionPolygon2D.disabled = true
+	$jardim/CollisionPolygon2D.disabled = true
 	$tree_aut.show()
 
 func fim_de_jogo():

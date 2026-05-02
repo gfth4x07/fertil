@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://d088tvv3jkusw"]
+
+[ext_resource type="Script" uid="uid://qh7x86ku2boj" path="res://subscript_effect.gd" id="1_j8w0a"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_bj0a2"]
+script = ExtResource("1_j8w0a")
+metadata/_custom_type_script = "uid://qh7x86ku2boj"
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 532.0
+offset_bottom = 229.0
+bbcode_enabled = true
+text = "normal
+normal [b]negrito[/b]
+normal [sub]subscrito[/sub]
+[b]negrito [sub]subscrito[/sub][/b]
+a[sub][font_size=10]1[/font_size][/sub]
+[b]a[sub]1[/sub][/b]"
+custom_effects = [SubResource("RichTextEffect_bj0a2")]

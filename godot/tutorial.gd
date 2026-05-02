@@ -31,7 +31,7 @@ func tutorial():
 		$seta.hide()
 		$".".show()
 		$bloco_de_notas.hide()
-		$"../background/jardim/CollisionPolygon2D".disabled = true
+		$"../jardim/CollisionPolygon2D".disabled = true
 		$"../prox_dia".disabled = true
 		#TODO FAZER UM LOOP
 		$"../menu_loja/Loja".set_item_disabled(0,true)
@@ -54,9 +54,9 @@ func tutorial():
 		if global.etapa_tutorial == 5:
 			$seta.hide()
 			$"../menu_loja/Loja".set_item_disabled(1,true)
-			$"../background/jardim/CollisionPolygon2D".disabled = false
+			$"../jardim/CollisionPolygon2D".disabled = false
 		if global.etapa_tutorial == 6:
-			$"../background/jardim/CollisionPolygon2D".disabled = true
+			$"../jardim/CollisionPolygon2D".disabled = true
 			$proximo.show()
 		if global.etapa_tutorial == 7: # Clique em prox dia
 			$proximo.hide()
@@ -82,7 +82,7 @@ func tutorial():
 			$proximo.hide()
 			var nova_planta = Nabo.instantiate()
 			nova_planta.position = Vector2(120,120)
-			$"../background/jardim/CollisionPolygon2D".add_child(nova_planta)
+			$"../jardim/CollisionPolygon2D".add_child(nova_planta)
 			
 			await get_tree().create_timer(2).timeout
 			$"../"._on_prox_dia_button_up()
@@ -120,12 +120,12 @@ func tutorial():
 		if global.etapa_tutorial == 5:
 			$seta.hide()
 			$"../menu_loja/Loja".set_item_disabled(1,true) 
-			$"../background/jardim/CollisionPolygon2D".disabled = false
+			$"../jardim/CollisionPolygon2D".disabled = false
 		if global.etapa_tutorial == 6:
 			$seta.position = Vector2(400,24)
 			$seta.show()
 			$proximo.show()
-			$"../background/jardim/CollisionPolygon2D".disabled = true
+			$"../jardim/CollisionPolygon2D".disabled = true
 		if global.etapa_tutorial == 7:
 			$proximo.hide()
 			$seta.hide()
@@ -150,13 +150,13 @@ func tutorial():
 			#$fala.position = Vector2(111,213)
 		if global.etapa_tutorial == 2:
 			$proximo.hide()
-			$"../background/jardim/CollisionPolygon2D".disabled = false
+			$"../jardim/CollisionPolygon2D".disabled = false
 			$"../menu_loja/Loja".set_item_disabled(2,false)
 			
 		if global.etapa_tutorial == 3:
 			$bloco_de_notas/linha1.text = ""
 			$bloco_de_notas.show()
-			$"../background/jardim/CollisionPolygon2D".disabled = true
+			$"../jardim/CollisionPolygon2D".disabled = true
 			$"../prox_dia".disabled = false
 		if global.etapa_tutorial == 4:
 			pass
