@@ -8,76 +8,98 @@
 
 [node name="jogo_principal2" instance=ExtResource("1_1eb0h")]
 
-[node name="background_jardim#nabo_0" parent="." index="1" instance=ExtResource("2_1eb0h")]
-position = Vector2(80, 88)
+[node name="CollisionPolygon2D" parent="jardim" index="0"]
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(60.25735, 32.431015, 60.77819, 216.68437, 292.7782, 216.68437, 292.7782, 32.684376)
 
-[node name="background_jardim#nabo_1" parent="." index="2" instance=ExtResource("2_1eb0h")]
-position = Vector2(112, 88)
+[node name="nabo_0" parent="jardim/CollisionPolygon2D" index="0" instance=ExtResource("2_1eb0h")]
+position = Vector2(84.77819, 40.684376)
+
+[node name="nabo_1" parent="jardim/CollisionPolygon2D" index="1" instance=ExtResource("2_1eb0h")]
+position = Vector2(116.77819, 40.684376)
 idade = 1
 
-[node name="background_jardim#nabo_2" parent="." index="3" instance=ExtResource("2_1eb0h")]
-position = Vector2(144, 88)
+[node name="nabo_2" parent="jardim/CollisionPolygon2D" index="2" instance=ExtResource("2_1eb0h")]
+position = Vector2(148.7782, 40.684376)
 idade = 3
 
-[node name="background_jardim#nabo_3" parent="." index="4" instance=ExtResource("2_1eb0h")]
-position = Vector2(176, 88)
+[node name="nabo_3" parent="jardim/CollisionPolygon2D" index="3" instance=ExtResource("2_1eb0h")]
+position = Vector2(180.7782, 40.684376)
 idade = 4
 
-[node name="background_jardim#morango_1" parent="." index="5" instance=ExtResource("3_w8q1i")]
-position = Vector2(80, 120)
+[node name="morango_1" parent="jardim/CollisionPolygon2D" index="4" instance=ExtResource("3_w8q1i")]
+position = Vector2(84.77819, 72.68437)
 idade = 1
 
-[node name="background_jardim#morango_2" parent="." index="6" instance=ExtResource("3_w8q1i")]
-position = Vector2(112, 120)
+[node name="morango_2" parent="jardim/CollisionPolygon2D" index="5" instance=ExtResource("3_w8q1i")]
+position = Vector2(116.77819, 72.68437)
 idade = 4
 
-[node name="background_jardim#morango_3" parent="." index="7" instance=ExtResource("3_w8q1i")]
-position = Vector2(144, 120)
+[node name="morango_3" parent="jardim/CollisionPolygon2D" index="6" instance=ExtResource("3_w8q1i")]
+position = Vector2(148.7782, 72.68437)
 idade = 7
 
-[node name="background_jardim#morango_4" parent="." index="8" instance=ExtResource("3_w8q1i")]
-position = Vector2(176, 120)
+[node name="morango_4" parent="jardim/CollisionPolygon2D" index="7" instance=ExtResource("3_w8q1i")]
+position = Vector2(180.7782, 72.68437)
 idade = 8
 
-[node name="background_jardim#tomate_1" parent="." index="9" instance=ExtResource("4_kjbw7")]
-position = Vector2(80, 152)
+[node name="tomate_1" parent="jardim/CollisionPolygon2D" index="8" instance=ExtResource("4_kjbw7")]
+position = Vector2(84.77819, 104.68437)
 idade = 1
 
-[node name="background_jardim#tomate_2" parent="." index="10" instance=ExtResource("4_kjbw7")]
-position = Vector2(112, 152)
+[node name="tomate_2" parent="jardim/CollisionPolygon2D" index="9" instance=ExtResource("4_kjbw7")]
+position = Vector2(116.77819, 104.68437)
 idade = 2
 
-[node name="background_jardim#tomate_3" parent="." index="11" instance=ExtResource("4_kjbw7")]
-position = Vector2(144, 152)
+[node name="tomate_3" parent="jardim/CollisionPolygon2D" index="10" instance=ExtResource("4_kjbw7")]
+position = Vector2(148.7782, 104.68437)
 idade = 4
 
-[node name="background_jardim#tomate_4" parent="." index="12" instance=ExtResource("4_kjbw7")]
-position = Vector2(176, 152)
+[node name="tomate_4" parent="jardim/CollisionPolygon2D" index="11" instance=ExtResource("4_kjbw7")]
+position = Vector2(180.7782, 104.68437)
 idade = 5
 
-[node name="background_jardim#tomate_5" parent="." index="13" instance=ExtResource("4_kjbw7")]
-position = Vector2(208, 152)
+[node name="tomate_5" parent="jardim/CollisionPolygon2D" index="12" instance=ExtResource("4_kjbw7")]
+position = Vector2(212.7782, 104.68437)
 idade = 6
 
-[node name="background_jardim#abacaxi1" parent="." index="14" instance=ExtResource("5_ahdjt")]
-position = Vector2(80, 184)
+[node name="abacaxi1" parent="jardim/CollisionPolygon2D" index="13" instance=ExtResource("5_ahdjt")]
+position = Vector2(84.77819, 136.68437)
 idade = 1
 
-[node name="background_jardim#abacaxi2" parent="." index="15" instance=ExtResource("5_ahdjt")]
-position = Vector2(112, 184)
+[node name="abacaxi2" parent="jardim/CollisionPolygon2D" index="14" instance=ExtResource("5_ahdjt")]
+position = Vector2(116.77819, 136.68437)
 idade = 7
 
-[node name="background_jardim#abacaxi3" parent="." index="16" instance=ExtResource("5_ahdjt")]
-position = Vector2(144, 184)
+[node name="abacaxi3" parent="jardim/CollisionPolygon2D" index="15" instance=ExtResource("5_ahdjt")]
+position = Vector2(148.7782, 136.68437)
 idade = 13
 
-[node name="background_jardim#abacaxi4" parent="." index="17" instance=ExtResource("5_ahdjt")]
-position = Vector2(176, 184)
+[node name="abacaxi4" parent="jardim/CollisionPolygon2D" index="16" instance=ExtResource("5_ahdjt")]
+position = Vector2(180.7782, 136.68437)
 idade = 19
 
-[node name="background_jardim#abacaxi5" parent="." index="18" instance=ExtResource("5_ahdjt")]
-position = Vector2(208, 184)
+[node name="abacaxi5" parent="jardim/CollisionPolygon2D" index="17" instance=ExtResource("5_ahdjt")]
+position = Vector2(212.7782, 136.68437)
 idade = 20
+
+[node name="tree_spring" parent="." index="2"]
+visible = false
+
+[node name="tree_aut" parent="." index="3"]
+visible = false
+
+[node name="Dia" parent="." index="7"]
+offset_left = 218.0
+offset_top = 15.0
+offset_right = 274.0
+offset_bottom = 38.0
+
+[node name="tomato_button" parent="." index="8"]
+offset_left = 218.0
+offset_top = 21.0
+offset_right = 271.0
+offset_bottom = 34.0
 
 [node name="placar" parent="fim_de_jogo" index="5"]
 visible = false

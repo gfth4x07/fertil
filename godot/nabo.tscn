@@ -2,22 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://b7eqpri0p1jxa" path="res://planta.tscn" id="1_nf8vd"]
 [ext_resource type="Texture2D" uid="uid://hjabwimcmbww" path="res://sprites/crops.png" id="2_vvyjj"]
+[ext_resource type="Texture2D" uid="uid://blimlditif7x3" path="res://nova_arte/cenoura-1.png" id="3_l4yyu"]
+[ext_resource type="Texture2D" uid="uid://brio7gsnjyv2i" path="res://nova_arte/cenoura-2.png" id="4_4ip1r"]
+[ext_resource type="Texture2D" uid="uid://udar1ev6kral" path="res://nova_arte/cenoura-3.png" id="5_7iuwh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dpmnj"]
 atlas = ExtResource("2_vvyjj")
 region = Rect2(34, 1, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wpbbg"]
-atlas = ExtResource("2_vvyjj")
-region = Rect2(0, 26, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l4yyu"]
-atlas = ExtResource("2_vvyjj")
-region = Rect2(17, 26, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ip1r"]
-atlas = ExtResource("2_vvyjj")
-region = Rect2(34, 26, 16, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7iuwh"]
 animations = [{
@@ -26,13 +17,13 @@ animations = [{
 "texture": SubResource("AtlasTexture_dpmnj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wpbbg")
+"texture": ExtResource("3_l4yyu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l4yyu")
+"texture": ExtResource("4_4ip1r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4ip1r")
+"texture": ExtResource("5_7iuwh")
 }],
 "loop": true,
 "name": &"default",
@@ -44,5 +35,11 @@ custo = 120
 valor = 140
 estagio = [0, 1, 1, 2, 3]
 
+[node name="terra" parent="." index="1"]
+visible = false
+
 [node name="animated" parent="." index="2"]
+position = Vector2(0, 4)
+scale = Vector2(0.07407412, 0.07407406)
 sprite_frames = SubResource("SpriteFrames_7iuwh")
+frame = 3

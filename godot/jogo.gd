@@ -34,7 +34,7 @@ func _ready() -> void:
 	$Dia.text = "Dia: "+str(dia)
 	$Gold.text = "Gold: "+str(gold)+"G"
 	$menu_loja/Loja.select(0,true)
-	$tree_spring.show()
+	#$tree_spring.show()
 	$tree_aut.hide()
 	
 	if global.game_mode == "tutorial":

@@ -71,6 +71,10 @@ polygon = PackedVector2Array(60.25735, 32.431015, 60.25735, 215.00465, 290.26923
 position = Vector2(396.5, 107)
 texture = ExtResource("3_t8pok")
 
+[node name="tree_aut" type="Sprite2D" parent="."]
+position = Vector2(396.5, 107)
+texture = ExtResource("6_45nkh")
+
 [node name="prox_dia" type="TextureButton" parent="."]
 offset_left = 451.0
 offset_top = 263.0
@@ -156,10 +160,6 @@ item_1/text = "NABO              120G"
 item_2/text = "MORANGO     240G"
 item_3/text = "ABACAXI         350G"
 metadata/_edit_use_anchors_ = true
-
-[node name="tree_aut" type="Sprite2D" parent="."]
-position = Vector2(396.5, 107)
-texture = ExtResource("6_45nkh")
 
 [node name="fim_de_jogo" type="Sprite2D" parent="."]
 visible = false
