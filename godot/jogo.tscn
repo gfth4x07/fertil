@@ -231,6 +231,7 @@ offset_bottom = 37.0
 text = "Voltar ao menu"
 
 [node name="tutorial" type="Node2D" parent="."]
+visible = false
 script = ExtResource("10_orj5g")
 
 [node name="rita" type="Sprite2D" parent="tutorial"]

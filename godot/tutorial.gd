@@ -239,8 +239,8 @@ Continue passando os dias até que ele cresça completamente.",
 	"Parabéns, você colheu!",
 	"Cuidado pois se você não colher sua planta morre.
 Dessa vez a planta será por minha conta.",
-	"Cuidado pois se você não colher sua planta morre.
-Que triste a planta morreu.",
+	"Que triste a planta morreu.
+Quando ela morre não é mais possível colher e você perde todo seu dinheiro.",
 	"Se você ficar sem dinheiro para plantar e todas as suas plantas morrerem você perde o jogo.",
 	"Outra coisa, a primavera tem 30 dias. No dia seguinte todas as plantas morrerão e o jogo termina.",
 	"Tente fazer o máximo possível de dinheiro até lá.",
