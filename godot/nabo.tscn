@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://b7eqpri0p1jxa" path="res://planta.tscn" id="1_nf8vd"]
 [ext_resource type="Texture2D" uid="uid://hjabwimcmbww" path="res://sprites/crops.png" id="2_vvyjj"]
-[ext_resource type="Texture2D" uid="uid://blimlditif7x3" path="res://nova_arte/cenoura-1.png" id="3_l4yyu"]
-[ext_resource type="Texture2D" uid="uid://brio7gsnjyv2i" path="res://nova_arte/cenoura-2.png" id="4_4ip1r"]
-[ext_resource type="Texture2D" uid="uid://udar1ev6kral" path="res://nova_arte/cenoura-3.png" id="5_7iuwh"]
+[ext_resource type="Texture2D" uid="uid://dxvfs56mc24fv" path="res://nova_arte/cenoura-1.png" id="3_l4yyu"]
+[ext_resource type="Texture2D" uid="uid://dl3sgrokkp4q7" path="res://nova_arte/cenoura-2.png" id="4_4ip1r"]
+[ext_resource type="Texture2D" uid="uid://cyi60km0jod6k" path="res://nova_arte/cenoura-3.png" id="5_7iuwh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dpmnj"]
 atlas = ExtResource("2_vvyjj")
@@ -25,9 +25,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("5_7iuwh")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [node name="planta" instance=ExtResource("1_nf8vd")]

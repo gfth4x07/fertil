@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvvjvots63ujj"
-path="res://.godot/imported/Cenoura Completa.png-c9a414e14d0568a5bbc75a04030edd5c.ctex"
+uid="uid://kot7ngmoqva3"
+path="res://.godot/imported/arvore_sprite.png-b0c7533f51f50f7b39c1440e07fb072c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://nova_arte/Cenoura Completa.png"
-dest_files=["res://.godot/imported/Cenoura Completa.png-c9a414e14d0568a5bbc75a04030edd5c.ctex"]
+source_file="res://nova_arte/arvore_sprite.png"
+dest_files=["res://.godot/imported/arvore_sprite.png-b0c7533f51f50f7b39c1440e07fb072c.ctex"]
 
 [params]
 

@@ -83,12 +83,6 @@ idade = 19
 position = Vector2(212.7782, 136.68437)
 idade = 20
 
-[node name="tree_spring" parent="." index="2"]
-visible = false
-
-[node name="tree_aut" parent="." index="3"]
-visible = false
-
 [node name="Dia" parent="." index="7"]
 offset_left = 218.0
 offset_top = 15.0
