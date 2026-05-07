@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://da3slwchrjl3m"]
+[gd_scene load_steps=35 format=3 uid="uid://da3slwchrjl3m"]
 
 [ext_resource type="Script" uid="uid://bq0n7p6rm8rsb" path="res://jogo.gd" id="1_45nkh"]
 [ext_resource type="Texture2D" uid="uid://7wbo85a3bkrc" path="res://sprites/background.png" id="2_ysdx3"]
@@ -49,6 +49,14 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_orj5g"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_msvki"]
+script = ExtResource("12_7rhuj")
+metadata/_custom_type_script = "uid://qh7x86ku2boj"
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_qew1n"]
+script = ExtResource("12_7rhuj")
+metadata/_custom_type_script = "uid://qh7x86ku2boj"
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_qlqx7"]
 script = ExtResource("12_7rhuj")
 metadata/_custom_type_script = "uid://qh7x86ku2boj"
 
@@ -277,8 +285,29 @@ position = Vector2(209.99998, 96.99999)
 scale = Vector2(0.22150004, 0.22150004)
 texture = ExtResource("13_2ka1p")
 
+[node name="fala2" type="RichTextLabel" parent="tutorial"]
+offset_left = 5.0
+offset_top = 49.0
+offset_right = 342.0
+offset_bottom = 288.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_orj5g")
+bbcode_enabled = true
+text = "Nós começamos pelo a[sub][font_size=10]1[/font_size][/sub]
+E podemos encontrar os próximos fazendo:
+a[sub][color=yellow_green][font_size=10]2[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]1[/color]
+a[sub][color=yellow_green][font_size=10]3[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]2[/color]
+a[sub][color=yellow_green][font_size=10]4[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]3[/color]
+a[sub][color=yellow_green][font_size=10]5[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]4[/color]
+a[sub][color=yellow_green][font_size=10]6[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]5[/color]
+De maneira geral podemos fazer uma fórumla:
+a[sub][color=yellow_green][font_size=10]n[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia](n-1)[/color]"
+fit_content = true
+custom_effects = [SubResource("RichTextEffect_msvki")]
+
 [node name="bloco_de_notas" type="Node2D" parent="tutorial"]
-visible = false
 position = Vector2(18, 51)
 
 [node name="img" type="Sprite2D" parent="tutorial/bloco_de_notas"]
@@ -289,11 +318,43 @@ texture = ExtResource("15_msvki")
 [node name="linha1" type="RichTextLabel" parent="tutorial/bloco_de_notas"]
 offset_left = 324.25
 offset_top = 145.75122
-offset_right = 405.25
-offset_bottom = 167.75122
+offset_right = 418.0
+offset_bottom = 178.0
 theme_override_colors/default_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
-text = "8, 11, 14, "
+text = "8, 11, 14, 17"
 scroll_active = false
+
+[node name="linha2" type="RichTextLabel" parent="tutorial/bloco_de_notas"]
+offset_left = 323.25
+offset_top = 157.75122
+offset_right = 417.0
+offset_bottom = 181.0
+theme_override_colors/default_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+bbcode_enabled = true
+text = "a[sub][font_size=10]1[/font_size][/sub], a[sub][font_size=10]1[/font_size][/sub],  a[sub][font_size=10]1[/font_size][/sub], a[sub][font_size=10]1[/font_size][/sub]"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_qew1n")]
+
+[node name="linha3" type="RichTextLabel" parent="tutorial/bloco_de_notas"]
+offset_left = 324.25
+offset_top = 172.75122
+offset_right = 418.0
+offset_bottom = 196.0
+theme_override_colors/default_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+bbcode_enabled = true
+text = "[color=royal_blue]r = 3[/color]"
+scroll_active = false
+
+[node name="linha4" type="RichTextLabel" parent="tutorial/bloco_de_notas"]
+offset_left = 324.0
+offset_top = 187.0
+offset_right = 417.75
+offset_bottom = 219.24878
+theme_override_colors/default_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+bbcode_enabled = true
+text = "a[sub][font_size=10]5[/font_size][/sub] = 17 +[color=royal_blue] 3[/color]"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_qlqx7")]
 
 [connection signal="input_event" from="background/jardim" to="." method="_on_jardim_input_event"]
 [connection signal="input_event" from="background/jardim" to="tutorial" method="_on_jardim_input_event"]

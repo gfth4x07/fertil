@@ -1,5 +1,7 @@
 extends Node2D
 
+var fala_texto2 = 0
+
 const Nabo = preload("res://nabo.tscn")
 
 # Called when the node enters the scene tree for the first time.
@@ -33,6 +35,7 @@ func tutorial():
 		$seta.hide()
 		$".".show()
 		$bloco_de_notas.hide()
+		$fala2.hide()
 		$"../background/jardim/CollisionPolygon2D".disabled = true
 		$"../prox_dia".disabled = true
 		#TODO FAZER UM LOOP
@@ -161,10 +164,14 @@ func tutorial():
 			$"../menu_loja/Loja".set_item_disabled(2,false)
 			
 		if global.etapa_tutorial == 3:
+			$rita.hide()
 			$rita.position = Vector2(53, 231)
-			$fala.position = Vector2(95, 183)
-			$fala.size = Vector2(230,92)
+			$fala.position = Vector2(5, 183)
+			$fala.size = Vector2(315,92)
 			$bloco_de_notas/linha1.text = ""
+			$bloco_de_notas/linha2.text = ""
+			$bloco_de_notas/linha3.text = ""
+			$bloco_de_notas/linha4.hide()
 			$bloco_de_notas.show()
 			$"../background/jardim/CollisionPolygon2D".disabled = true
 			$"../prox_dia".disabled = false
@@ -182,16 +189,52 @@ func tutorial():
 			$"../prox_dia".disabled = false
 		if global.etapa_tutorial == 18:
 			$"../prox_dia".disabled = true
-		if global.etapa_tutorial == 19:
 			$bloco_de_notas/linha1.text += ", 14"
+		if global.etapa_tutorial == 19:
 			$proximo.show()
+		if global.etapa_tutorial == 20:
+			$bloco_de_notas/linha2.text = "a[sub][font_size=10]1[/font_size][/sub], a[sub][font_size=10]2[/font_size][/sub], a[sub][font_size=10]3[/font_size][/sub]"
 		if global.etapa_tutorial == 22:
 			$proximo.hide()
 			$"../prox_dia".disabled = false
-		if global.etapa_tutorial == 15:
+		if global.etapa_tutorial == 25:
+			$bloco_de_notas/linha1.text += ", 17"
+			$bloco_de_notas/linha2.text += ", a[sub][font_size=10]4[/font_size][/sub]"	
+			$"../prox_dia".disabled = true
+		if global.etapa_tutorial == 26:
+			$proximo.show()
+		if global.etapa_tutorial == 27:
+			$bloco_de_notas/linha3.text += "[color=royal_blue]r = 3[/color]"
+		if global.etapa_tutorial == 28:
+			$bloco_de_notas/linha4.show()
+		if global.etapa_tutorial == 29:
+			$bloco_de_notas/linha4.text = "a[sub][font_size=10]5[/font_size][/sub]=20"
+		if global.etapa_tutorial == 33:
+			$fala.hide()
+			fala_texto2 = 0
+			$fala2.show()
+			$fala2.text = texto2_sequencias[fala_texto2]
+			fala_texto2 += 1
+		if global.etapa_tutorial == 34:
+			$fala2.text = texto2_sequencias[fala_texto2]
+			fala_texto2 += 1
+		if global.etapa_tutorial == 35:
+			$fala2.text = texto2_sequencias[fala_texto2]
+			fala_texto2 += 1
+		if global.etapa_tutorial == 36:
+			$fala2.text = texto2_sequencias[fala_texto2]
+			fala_texto2 += 1
+		if global.etapa_tutorial == 37:
+			$fala2.text = texto2_sequencias[fala_texto2]
+			fala_texto2 += 1
+		if global.etapa_tutorial == 38:
+			$fala2.text = texto2_sequencias[fala_texto2]
+			fala_texto2 += 1
+		if global.etapa_tutorial == 99:
 			pass
-		if global.etapa_tutorial == 15:
-			pass
+		
+		
+		
 		if global.etapa_tutorial == 60: #FIM
 			$proximo.hide()
 			$rita.hide()
@@ -316,14 +359,90 @@ Vamos continuar!", # 15
 Olha só, os dias da colheita! Eles formam uma sequência.",
 	"A cada número da sequênica damos o nome de [b]termo[/b]. Então o dia da primeira colheita é o 1º termo da nossa sequência.",
 	"Ou seja o 1º termo é 8.
-O 2º termo é 11, e o 3º é 14.
-Também podemos escrever como [b]a[sub][font_size=10]1[/font_size][/sub][/b] = 8, [b]a[sub][font_size=10]2[/font_size][/sub][/b] = 1 e [b]a[sub][font_size=10]3[/font_size][/sub][/b] = 14",
+O 2º termo é 11, e o 3º termo é 14.
+Também podemos escrever como:
+[b]a[sub][font_size=10]1[/font_size][/sub][/b] = 8, [b]a[sub][font_size=10]2[/font_size][/sub][/b] = 11 e [b]a[sub][font_size=10]3[/font_size][/sub][/b] = 14",
 	"Qual dia você acha que será a próxima colheita?
 Ou seja, o 4º termo da sequência, ou ainda [b]a[sub][font_size=10]4[/font_size][/sub][/b]",
-	"Agora avance os dias para verificar.",
-	"Agora avance os dias para verificar.",
-	"Agora avance os dias para verificar.",
-	"FIM DO TUTORIAL",
-	"FIM DO TUTORIAL",
-	"FIM DO TUTORIAL",
+	"Agora avance os dias para verificar.",  # 22
+	"Um padrão que podemos verificar é que para chegar no próximo termo sempre estamos somando 3.",
+	"Como o último dia de colheita foi o 14, o próximo será 14 + 3 = 17!",  
+	"Olha, deu isso mesmo!!
+
+Agora colha o morango",  # 25
+	"As sequências que têm esse padrão de sempre somar um valor para obter o próximo damos o nome de Progressão Aritmética ou PA.",
+	"E a esse número que estamos somando damos o nome de [color=royal_blue]razão[/color] e usamos a letra [color=royal_blue]r[/color] para indicar esse valor.",
+	"Seguindo o padrão da sequência, podemos falar que a[sub][font_size=10]5[/font_size][/sub] = a[sub][font_size=10]4[/font_size][/sub] +  [color=royal_blue]r[/color].",
+	"E nossa próxima colheita será dia 20
+	
+Não é legal?",
+	"Imagina agora que você quer descobrir quando vai ser a colheita de número 20
+Como podemos fazer isso?
+
+hummm...",  # 30
+	"Já sei!
+Podemos pegar o a[sub][font_size=10]1[/font_size][/sub] e fazer
+a[sub][font_size=10]20[/font_size][/sub] = a[sub][font_size=10]1[/font_size][/sub]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color] ",
+"Ih, ficou confuso? Deixa eu te explicar.",  # 32
+	"","","","","","","","","","","","","","","","","","","","","","",
 	"FIM DO TUTORIAL"]
+
+
+var texto2_sequencias = [
+"Nós começamos pelo a[sub][font_size=10]1[/font_size][/sub]
+E podemos encontrar os próximos fazendo:
+a[sub][font_size=10]2[/font_size][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color]
+a[sub][font_size=10]3[/font_size][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color]
+a[sub][font_size=10]4[/font_size][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color]
+a[sub][font_size=10]5[/font_size][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color]
+a[sub][font_size=10]6[/font_size][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color]",
+
+"Nós começamos pelo a[sub][font_size=10]1[/font_size][/sub]
+E podemos encontrar os próximos fazendo:
+a[sub][font_size=10]2[/font_size][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]1[/color]
+a[sub][font_size=10]3[/font_size][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]2[/color]
+a[sub][font_size=10]4[/font_size][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]3[/color]
+a[sub][font_size=10]5[/font_size][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]4[/color]
+a[sub][font_size=10]6[/font_size][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]5[/color]",
+
+"Nós começamos pelo a[sub][font_size=10]1[/font_size][/sub]
+E podemos encontrar os próximos fazendo:
+a[sub][color=yellow_green][font_size=10]2[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]1[/color]
+a[sub][color=yellow_green][font_size=10]3[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]2[/color]
+a[sub][color=yellow_green][font_size=10]4[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]3[/color]
+a[sub][color=yellow_green][font_size=10]5[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]4[/color]
+a[sub][color=yellow_green][font_size=10]6[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]5[/color]",
+
+"Nós começamos pelo a[sub][font_size=10]1[/font_size][/sub]
+E podemos encontrar os próximos fazendo:
+a[sub][color=yellow_green][font_size=10]2[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]1[/color]
+a[sub][color=yellow_green][font_size=10]3[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]2[/color]
+a[sub][color=yellow_green][font_size=10]4[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]3[/color]
+a[sub][color=yellow_green][font_size=10]5[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]4[/color]
+a[sub][color=yellow_green][font_size=10]6[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]5[/color]
+...
+Então o a[sub][font_size=10]20[/font_size][/sub] = ...",
+
+"Nós começamos pelo a[sub][font_size=10]1[/font_size][/sub]
+E podemos encontrar os próximos fazendo:
+a[sub][color=yellow_green][font_size=10]2[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]1[/color]
+a[sub][color=yellow_green][font_size=10]3[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]2[/color]
+a[sub][color=yellow_green][font_size=10]4[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]3[/color]
+a[sub][color=yellow_green][font_size=10]5[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]4[/color]
+a[sub][color=yellow_green][font_size=10]6[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]5[/color]
+...
+a[sub][color=yellow_green][font_size=10]20[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]19[/color]
+",
+
+"Nós começamos pelo a[sub][font_size=10]1[/font_size][/sub]
+E podemos encontrar os próximos fazendo:
+a[sub][color=yellow_green][font_size=10]2[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]1[/color]
+a[sub][color=yellow_green][font_size=10]3[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]2[/color]
+a[sub][color=yellow_green][font_size=10]4[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]3[/color]
+a[sub][color=yellow_green][font_size=10]5[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]4[/color]
+a[sub][color=yellow_green][font_size=10]6[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]5[/color]
+De maneira geral podemos fazer uma fórumla:
+a[sub][color=yellow_green][font_size=10]n[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia](n-1)[/color]
+",
+"",
+]
