@@ -27,6 +27,8 @@ func atualizar_texto():
 func tutorial():
 	print("OIOIOI ",global.etapa_tutorial," # ",$fala.text)
 	if global.etapa_tutorial == 0:
+		$fala.position = Vector2(25,155)
+		$fala.size = Vector2(390,92)
 		$rita_smile.hide()
 		$seta.hide()
 		$".".show()
@@ -41,8 +43,9 @@ func tutorial():
 	
 	if global.tutorial_mode == "como_jogar":
 		if global.etapa_tutorial == 2:
-			$rita.position = Vector2(55,255)
-			$fala.position = Vector2(111,213)
+			$rita.position = Vector2(53, 231)
+			$fala.position = Vector2(105, 183)
+			$fala.size = Vector2(330,92)
 			$seta.position = Vector2(400,24)
 			$seta.show()
 		if global.etapa_tutorial == 3:
@@ -149,11 +152,18 @@ func tutorial():
 			#$rita.position = Vector2(55,255)
 			#$fala.position = Vector2(111,213)
 		if global.etapa_tutorial == 2:
+			$rita.position = Vector2(53, 231)
+			$fala.position = Vector2(105, 183)
+			$fala.size = Vector2(330,92)
+			
 			$proximo.hide()
 			$"../background/jardim/CollisionPolygon2D".disabled = false
 			$"../menu_loja/Loja".set_item_disabled(2,false)
 			
 		if global.etapa_tutorial == 3:
+			$rita.position = Vector2(53, 231)
+			$fala.position = Vector2(95, 183)
+			$fala.size = Vector2(230,92)
 			$bloco_de_notas/linha1.text = ""
 			$bloco_de_notas.show()
 			$"../background/jardim/CollisionPolygon2D".disabled = true
@@ -175,8 +185,9 @@ func tutorial():
 		if global.etapa_tutorial == 19:
 			$bloco_de_notas/linha1.text += ", 14"
 			$proximo.show()
-		if global.etapa_tutorial == 15:
-			pass
+		if global.etapa_tutorial == 22:
+			$proximo.hide()
+			$"../prox_dia".disabled = false
 		if global.etapa_tutorial == 15:
 			pass
 		if global.etapa_tutorial == 15:
@@ -251,8 +262,8 @@ var texto_financas = [ #PLANTAR MORANGO
 	"Olá! Seja bem vindo ao f(e)rtil!
 Um jogo onde se deve plantar para conseguir a maior quantidade de dinheiro e aprender enquanto se diverte!",
 	"Bem-vindo ao tutorial de finanças",
-	"Esse dinheiro que você tem é chamado de [color='black']caixa[/color].
-	Então temos em caixa 300G", # Dinheiro em caixa
+	"Esse dinheiro que você tem é chamado de [color='dim_gray']caixa[/color].
+Nesse momento temos em caixa 300G.", # Dinheiro em caixa
 	"Agora veja que para plantar um nabo você precisará comprar a semente.
 Esse valor será gasto por você, por isso chamamos ele de [color='red']gasto[/color] ou [color='red']custo[/color].", # Gasto
 	"Plante um nabo.",
@@ -308,7 +319,7 @@ Olha só, os dias da colheita! Eles formam uma sequência.",
 O 2º termo é 11, e o 3º é 14.
 Também podemos escrever como [b]a[sub][font_size=10]1[/font_size][/sub][/b] = 8, [b]a[sub][font_size=10]2[/font_size][/sub][/b] = 1 e [b]a[sub][font_size=10]3[/font_size][/sub][/b] = 14",
 	"Qual dia você acha que será a próxima colheita?
-Ou seja, o 4º termo, ou ainda [b]a[sub][font_size=10]4[/font_size][/sub][/b]",
+Ou seja, o 4º termo da sequência, ou ainda [b]a[sub][font_size=10]4[/font_size][/sub][/b]",
 	"Agora avance os dias para verificar.",
 	"Agora avance os dias para verificar.",
 	"Agora avance os dias para verificar.",

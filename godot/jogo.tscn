@@ -231,21 +231,25 @@ offset_bottom = 37.0
 text = "Voltar ao menu"
 
 [node name="tutorial" type="Node2D" parent="."]
-visible = false
 script = ExtResource("10_orj5g")
 
 [node name="rita" type="Sprite2D" parent="tutorial"]
-position = Vector2(229, 122)
+position = Vector2(53, 231.00002)
 scale = Vector2(0.08885544, 0.08885543)
 texture = ExtResource("11_01kpq")
 
 [node name="fala" type="RichTextLabel" parent="tutorial"]
-offset_left = 70.0
-offset_top = 177.0
-offset_right = 400.0
-offset_bottom = 226.0
+offset_left = 105.0
+offset_top = 183.0
+offset_right = 442.0
+offset_bottom = 289.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_orj5g")
 bbcode_enabled = true
+text = "Olá! Seja bem vindo ao f(e)rtil!
+Um jogo onde se deve plantar para conseguir a maior quantidade de dinheiro e aprender enquanto se diverte!"
 fit_content = true
 custom_effects = [SubResource("RichTextEffect_msvki")]
 
@@ -274,18 +278,19 @@ scale = Vector2(0.22150004, 0.22150004)
 texture = ExtResource("13_2ka1p")
 
 [node name="bloco_de_notas" type="Node2D" parent="tutorial"]
+visible = false
 position = Vector2(18, 51)
 
 [node name="img" type="Sprite2D" parent="tutorial/bloco_de_notas"]
-position = Vector2(55, 60)
+position = Vector2(370.25, 184.75122)
 scale = Vector2(0.3002451, 0.3002451)
 texture = ExtResource("15_msvki")
 
 [node name="linha1" type="RichTextLabel" parent="tutorial/bloco_de_notas"]
-offset_left = 9.0
-offset_top = 21.0
-offset_right = 90.0
-offset_bottom = 43.0
+offset_left = 324.25
+offset_top = 145.75122
+offset_right = 405.25
+offset_bottom = 167.75122
 theme_override_colors/default_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
 text = "8, 11, 14, "
 scroll_active = false
