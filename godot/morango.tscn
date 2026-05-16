@@ -1,45 +1,28 @@
-[gd_scene load_steps=9 format=3 uid="uid://byas14wi2vhes"]
+[gd_scene load_steps=7 format=3 uid="uid://byas14wi2vhes"]
 
 [ext_resource type="PackedScene" uid="uid://b7eqpri0p1jxa" path="res://planta.tscn" id="1_lprtv"]
-[ext_resource type="Texture2D" uid="uid://hjabwimcmbww" path="res://sprites/crops.png" id="2_rv8gf"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rv8gf"]
-atlas = ExtResource("2_rv8gf")
-region = Rect2(34, 1, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cfc8c"]
-atlas = ExtResource("2_rv8gf")
-region = Rect2(0, 101, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wwq5b"]
-atlas = ExtResource("2_rv8gf")
-region = Rect2(17, 101, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_neit1"]
-atlas = ExtResource("2_rv8gf")
-region = Rect2(34, 101, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r04t0"]
-atlas = ExtResource("2_rv8gf")
-region = Rect2(51, 101, 16, 24)
+[ext_resource type="Texture2D" uid="uid://cfq5uy3rk8cx3" path="res://nova_arte/morango-0.png" id="2_gje82"]
+[ext_resource type="Texture2D" uid="uid://c6eoxoxqjxp7j" path="res://nova_arte/morango-1.png" id="3_a4k5c"]
+[ext_resource type="Texture2D" uid="uid://bl07h8pa4mten" path="res://nova_arte/morango-2.png" id="4_ra852"]
+[ext_resource type="Texture2D" uid="uid://cxal6n6dcoatn" path="res://nova_arte/morango-3.png" id="5_cfc8c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_svp2x"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rv8gf")
+"texture": ExtResource("2_gje82")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cfc8c")
+"texture": ExtResource("3_a4k5c")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wwq5b")
+"texture": ExtResource("3_a4k5c")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_neit1")
+"texture": ExtResource("4_ra852")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r04t0")
+"texture": ExtResource("5_cfc8c")
 }],
 "loop": true,
 "name": &"default",
@@ -52,5 +35,10 @@ valor = 100
 estagio = [0, 1, 1, 1, 2, 2, 2, 3, 4]
 colheita_recorrente = true
 
+[node name="terra" parent="." index="1"]
+visible = false
+centered = false
+
 [node name="animated" parent="." index="2"]
+scale = Vector2(0.06666666, 0.06666666)
 sprite_frames = SubResource("SpriteFrames_svp2x")

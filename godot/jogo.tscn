@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://bq0n7p6rm8rsb" path="res://jogo.gd" id="1_45nkh"]
 [ext_resource type="Texture2D" uid="uid://cgtathyu3ma1b" path="res://nova_arte/bg_horta.png" id="2_7rhuj"]
 [ext_resource type="Texture2D" uid="uid://kot7ngmoqva3" path="res://nova_arte/arvore_sprite.png" id="3_msvki"]
+[ext_resource type="Texture2D" uid="uid://cj3gqypafax6b" path="res://nova_arte/arvore-inverno.png" id="4_7rhuj"]
 [ext_resource type="Texture2D" uid="uid://dvaqnmd1rfwqg" path="res://sprites/menu-direito.png" id="4_mtw28"]
 [ext_resource type="Texture2D" uid="uid://dykl4c3bphy3g" path="res://sprites/proximo-dia.png" id="5_orj5g"]
 [ext_resource type="Texture2D" uid="uid://crycdrevwjnc8" path="res://sprites/gold.png" id="5_ysdx3"]
 [ext_resource type="Texture2D" uid="uid://ctpldhcaa4wb" path="res://sprites/fim-de-jogo.png" id="6_8c340"]
-[ext_resource type="Texture2D" uid="uid://bjwqt82t8holf" path="res://sprites/autumn-tree.png" id="6_45nkh"]
 [ext_resource type="Script" uid="uid://bvh61cwst5xtc" path="res://tutorial.gd" id="10_orj5g"]
 [ext_resource type="Texture2D" uid="uid://r8v0xrq35yj" path="res://sprites/avatar/rita.png" id="11_01kpq"]
 [ext_resource type="Texture2D" uid="uid://bcibypb2mepie" path="res://sprites/seta.png" id="12_01kpq"]
@@ -74,8 +74,9 @@ texture = ExtResource("3_msvki")
 
 [node name="tree_aut" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(396.5, 107)
-texture = ExtResource("6_45nkh")
+position = Vector2(374, 118.99999)
+scale = Vector2(0.158, 0.158)
+texture = ExtResource("4_7rhuj")
 
 [node name="prox_dia" type="TextureButton" parent="."]
 offset_left = 451.0
