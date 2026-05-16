@@ -1,16 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdf11ipf57oly"]
+[gd_scene load_steps=3 format=3 uid="uid://bdf11ipf57oly"]
 
 [ext_resource type="Script" uid="uid://cuc30nt2uotdj" path="res://questionário.gd" id="1_1y8aj"]
+[ext_resource type="Texture2D" uid="uid://ea21lsxmaj3b" path="res://raw-sprites/Game Boy Advance - Pokemon FireRed _ LeafGreen - Menu Elements - Menu Frames.png" id="2_7t3e1"]
 
 [node name="Questionário" type="Node2D"]
 script = ExtResource("1_1y8aj")
 
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = 60.0
+offset_top = 23.0
+offset_right = 510.0
+offset_bottom = 290.0
+texture = ExtResource("2_7t3e1")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
 [node name="Pagina1" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="Pergunta1a" type="RichTextLabel" parent="Pagina1"]
 layout_mode = 0
@@ -18,6 +34,7 @@ offset_left = 2.0
 offset_top = 45.0
 offset_right = 519.0
 offset_bottom = 116.0
+theme_override_constants/outline_size = 3
 text = "\"1a. Qual o preço de custo do Morango?"
 horizontal_alignment = 1
 
@@ -30,6 +47,7 @@ offset_bottom = 133.0
 max_value = 999.0
 rounded = true
 suffix = "G"
+metadata/_edit_use_anchors_ = true
 
 [node name="Pergunta1b" type="RichTextLabel" parent="Pagina1"]
 layout_mode = 0
@@ -37,6 +55,7 @@ offset_left = 3.0
 offset_top = 156.0
 offset_right = 520.0
 offset_bottom = 227.0
+theme_override_constants/outline_size = 3
 text = "\"1b. Qual o preço de venda do morango"
 horizontal_alignment = 1
 
@@ -62,6 +81,7 @@ offset_left = 5.0
 offset_top = 3.0
 offset_right = 522.0
 offset_bottom = 113.0
+theme_override_constants/outline_size = 3
 text = "2.  Considere  a  seguinte  situação:  um  jogador  decide  plantar  um  pé  de  morango no dia 1 e não irá plantar mais nada.
 a.  Em qual dia será feita a sua primeira colheita? "
 horizontal_alignment = 1
@@ -80,6 +100,7 @@ offset_left = 6.0
 offset_top = 111.0
 offset_right = 523.0
 offset_bottom = 168.0
+theme_override_constants/outline_size = 3
 text = " b. Escreva uma sequência que represente  todos  os dias  de colheita."
 horizontal_alignment = 1
 
@@ -97,6 +118,7 @@ offset_left = 28.0
 offset_top = 200.0
 offset_right = 545.0
 offset_bottom = 257.0
+theme_override_constants/outline_size = 3
 text = " c. Com quanto dinheiro o jogador terminará o jogo?
  Qual foi o seu lucro?
 "
@@ -133,6 +155,7 @@ offset_left = 2.0
 offset_top = 9.0
 offset_right = 519.0
 offset_bottom = 80.0
+theme_override_constants/outline_size = 3
 text = "3. Com  base  nas  respostas  snteriores,  escreva  qual  é  o  último  dia  do  mês  em  que  é 
 possível plantar um pé de morango e obter lucro."
 horizontal_alignment = 1
@@ -151,6 +174,7 @@ offset_left = 20.0
 offset_top = 130.0
 offset_right = 524.0
 offset_bottom = 253.0
+theme_override_constants/outline_size = 3
 text = "4.  Considerando  a  situação  descrita  no  Exercício  2  ,  mas  tendo  em  mente  o último  dia  da  primavera  sendo  o  dia  218 ,  quantas  vezes  esse  pé  de  morango poderá ser colhido?"
 horizontal_alignment = 1
 
@@ -175,6 +199,7 @@ offset_left = 5.0
 offset_top = 4.0
 offset_right = 509.0
 offset_bottom = 170.0
+theme_override_constants/outline_size = 3
 text = "5.  O  abacaxi  custa  350G  para  plantar  e,  quando  plantado  no  dia  1,  ele  poderá ser  colhido  nos  dias  20,  22,  24,  26  e  assim  por  diante.  Em  cada  colheita  o jogador ganha 350G. 
 
 a.  Se  um  abacaxi  for  plantado  no  dia  7,  em  quais  dias  será  feita  a colheita?"
@@ -193,6 +218,7 @@ offset_left = 3.0
 offset_top = 173.0
 offset_right = 507.0
 offset_bottom = 339.0
+theme_override_constants/outline_size = 3
 text = " b. Quanto  tempo  leva para ser considerado lucrativo plantar  o abacaxi?"
 horizontal_alignment = 1
 
@@ -206,17 +232,17 @@ max_value = 31.0
 suffix = "dias"
 
 [node name="Proxima" type="Button" parent="."]
-offset_left = 433.0
-offset_top = 253.0
-offset_right = 523.0
-offset_bottom = 290.0
+offset_left = 409.0
+offset_top = 243.0
+offset_right = 499.0
+offset_bottom = 280.0
 text = "Próxima"
 
 [node name="Anterior" type="Button" parent="."]
-offset_left = 7.0
-offset_top = 255.0
-offset_right = 97.0
-offset_bottom = 292.0
+offset_left = 71.0
+offset_top = 245.0
+offset_right = 161.0
+offset_bottom = 282.0
 text = "Anterior"
 
 [node name="Enviar" type="Button" parent="."]
@@ -256,6 +282,7 @@ offset_left = 34.0
 offset_top = 72.0
 offset_right = 495.0
 offset_bottom = 105.0
+theme_override_constants/outline_size = 3
 text = "Parabéns você acertou 0/10 Perguntas!"
 horizontal_alignment = 1
 
@@ -265,6 +292,7 @@ offset_left = 110.0
 offset_top = 162.0
 offset_right = 431.0
 offset_bottom = 202.0
+theme_override_constants/outline_size = 3
 text = "Clique em anterior para ver o que errou"
 
 [connection signal="text_changed" from="Pagina2/Resposta2b" to="." method="_on_resposta_list_text_changed" flags=18]
