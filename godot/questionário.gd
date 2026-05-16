@@ -3,6 +3,7 @@ var pagina = 0
 var enviado = false
 var acertoSprite = preload("res://acerto.tscn")
 var erroSprite = preload("res://erro.tscn")
+
 func _ready() -> void:
 	pagina = 1
 	$Anterior.hide()
