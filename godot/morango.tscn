@@ -42,3 +42,4 @@ centered = false
 [node name="animated" parent="." index="2"]
 scale = Vector2(0.06666666, 0.06666666)
 sprite_frames = SubResource("SpriteFrames_svp2x")
+frame = 3

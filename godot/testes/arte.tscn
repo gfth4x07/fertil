@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2s6djix2evcd"]
+[gd_scene load_steps=7 format=3 uid="uid://c2s6djix2evcd"]
 
 [ext_resource type="PackedScene" uid="uid://da3slwchrjl3m" path="res://jogo.tscn" id="1_1eb0h"]
 [ext_resource type="PackedScene" uid="uid://dgiijc3juia01" path="res://nabo.tscn" id="2_1eb0h"]
 [ext_resource type="PackedScene" uid="uid://byas14wi2vhes" path="res://morango.tscn" id="3_w8q1i"]
 [ext_resource type="PackedScene" uid="uid://orf515r0cgan" path="res://tomate.tscn" id="4_kjbw7"]
 [ext_resource type="PackedScene" uid="uid://bhbglkau0sffh" path="res://abacaxi.tscn" id="5_ahdjt"]
+[ext_resource type="Texture2D" uid="uid://cj3gqypafax6b" path="res://nova_arte/arvore-inverno.png" id="6_kjbw7"]
 
 [node name="jogo_principal2" instance=ExtResource("1_1eb0h")]
 
@@ -83,6 +84,9 @@ idade = 19
 position = Vector2(212.7782, 136.68437)
 idade = 20
 
+[node name="tree_aut" parent="." index="3"]
+visible = true
+
 [node name="Dia" parent="." index="7"]
 offset_left = 218.0
 offset_top = 15.0
@@ -97,3 +101,8 @@ offset_bottom = 34.0
 
 [node name="placar" parent="fim_de_jogo" index="5"]
 visible = false
+
+[node name="tree_aut2" type="Sprite2D" parent="." index="13"]
+position = Vector2(374, 219.99998)
+scale = Vector2(0.158, 0.158)
+texture = ExtResource("6_kjbw7")
