@@ -267,7 +267,7 @@ func _on_prox_dia_button_up() -> void:
 		tutorial()
 
 func _on_voltar_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://menu_modos.tscn")
+	get_tree().change_scene_to_file("res://menu_principal.tscn")
 
 ##########################
 ## TEXTOS DOS TUTORIAIS ##

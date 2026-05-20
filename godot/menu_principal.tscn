@@ -1,0 +1,69 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy252hm86274l"]
+
+[ext_resource type="Script" uid="uid://f5orndp85lxx" path="res://menu_principal.gd" id="1_bj1uy"]
+
+[node name="menu_principal" type="Node2D"]
+script = ExtResource("1_bj1uy")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 158.0
+offset_top = 253.0
+offset_right = 394.0
+offset_bottom = 295.0
+text = "JOGAR"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 156.0
+offset_top = 146.0
+offset_right = 389.0
+offset_bottom = 173.0
+text = "SELECIONE O MODO DE JOGO"
+
+[node name="OptionButton" type="OptionButton" parent="."]
+offset_left = 167.0
+offset_top = 170.0
+offset_right = 380.0
+offset_bottom = 206.0
+item_count = 3
+popup/item_0/text = "Play"
+popup/item_0/id = 0
+popup/item_1/text = "Tutorial"
+popup/item_1/id = 1
+popup/item_2/text = "Placar"
+popup/item_2/id = 2
+
+[node name="Tutorial mode" type="OptionButton" parent="."]
+visible = false
+offset_left = 167.0
+offset_top = 210.0
+offset_right = 380.0
+offset_bottom = 246.0
+item_count = 3
+popup/item_0/text = "Como Jogar"
+popup/item_0/id = 0
+popup/item_1/text = "Finança"
+popup/item_1/id = 1
+popup/item_2/text = "Sequências"
+popup/item_2/id = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 170.0
+offset_top = 38.0
+offset_right = 372.0
+offset_bottom = 129.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 64
+text = "F(é)rtil"
+scroll_active = false
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="Tutorial mode" to="." method="_on_tutorial_mode_item_selected"]
