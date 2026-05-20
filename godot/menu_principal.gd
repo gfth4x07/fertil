@@ -1,6 +1,8 @@
 extends Node2D
+var count_menu_modo  = 0
 
 
+# PARA ACESSAR O MENU DE MODOS DEVE-SE CLICAR 2 VEZES NO PINGO DO I
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -43,3 +45,11 @@ func _on_tutorial_mode_item_selected(index: int) -> void:
 		global.tutorial_mode = "financas"
 	elif index == 2:
 		global.tutorial_mode = "sequencias"
+
+
+func _on_botao_menu_modos_pressed() -> void:
+	count_menu_modo  += 1
+	if count_menu_modo == 2:
+		get_tree().change_scene_to_file("res://menu_modos.tscn")
+
+	pass # Replace with function body.

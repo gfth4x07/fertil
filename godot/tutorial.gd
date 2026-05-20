@@ -116,6 +116,9 @@ func tutorial():
 	
 	if global.tutorial_mode == "financas":
 		if global.etapa_tutorial == 2: 
+			$rita.position = Vector2(53, 231)
+			$fala.position = Vector2(105, 183)
+			$fala.size = Vector2(330,92)
 			$seta.position = Vector2(400,24)
 			$seta.show()
 		if global.etapa_tutorial == 3:
@@ -172,6 +175,7 @@ func tutorial():
 			$bloco_de_notas/linha2.text = ""
 			$bloco_de_notas/linha3.text = ""
 			$bloco_de_notas/linha4.hide()
+			$bloco_de_notas/linha5.hide()
 			$bloco_de_notas.show()
 			$"../background/jardim/CollisionPolygon2D".disabled = true
 			$"../prox_dia".disabled = false
@@ -209,6 +213,9 @@ func tutorial():
 			$bloco_de_notas/linha4.show()
 		if global.etapa_tutorial == 29:
 			$bloco_de_notas/linha4.text = "a[sub][font_size=10]5[/font_size][/sub]=20"
+		if global.etapa_tutorial == 30:
+			$bloco_de_notas/linha5.show()
+			$bloco_de_notas/linha5.text = "a[sub][font_size=10]20[/font_size][/sub] = ?"
 		if global.etapa_tutorial == 33:
 			$fala.hide()
 			fala_texto2 = 0
@@ -228,6 +235,18 @@ func tutorial():
 			$fala2.text = texto2_sequencias[fala_texto2]
 			fala_texto2 += 1
 		if global.etapa_tutorial == 38:
+			$fala2.text = texto2_sequencias[fala_texto2]
+			fala_texto2 += 1
+		if global.etapa_tutorial == 39:
+			$fala2.text = texto2_sequencias[fala_texto2]
+			fala_texto2 += 1
+		if global.etapa_tutorial == 40:
+			$fala2.text = texto2_sequencias[fala_texto2]
+			fala_texto2 += 1
+		if global.etapa_tutorial == 41:
+			$fala2.text = texto2_sequencias[fala_texto2]
+			fala_texto2 += 1
+		if global.etapa_tutorial == 42:
 			$fala2.text = texto2_sequencias[fala_texto2]
 			fala_texto2 += 1
 		if global.etapa_tutorial == 99:
@@ -318,7 +337,7 @@ Agora você só tem 180G",
 	"Agora avance os dias para colher o nabo.",
 	"Agora avance os dias para colher o nabo.",
 	"Veja, seu dinheiro aumentou.
-Você tinha 180G e agora têm 320, ou seja, ganhou 140G!
+Você tinha 180G e agora têm 320G, ou seja, ganhou 140G!
 Esse valor é o que chamamos de [color='yellow']receita[/color].",
 	"Mas pense bem, se considerar que para plantar o nabo foi [color='red']gasto 120G[/color] e quando colheu você [color='yellow']recebeu 140G[/color].
 Então  na verdade você ficou com 20G a mais.",
@@ -327,6 +346,7 @@ Então seu [color='green']lucro[/color] foi de 20G.",
 	"Também podemos pensar no lucro como tinhamos 300G e depois 320G.
 Veja que o aumentou 20G",
 	"A diferença do [color='green']lucro[/color] para a [color='yellow']receita[/color] é que o [color='green']lucro[/color] considera o [color='red']gasto[/color] envolvido, já a [color='yellow']receita[/color] [b]não[/b] considera.",
+	"Algumas plantas podem ser colhidas várias vezes, como é o caso do morango",
 	"FIM DO TUTORIAL"] # TODO Lucro variável com o morango
 
 
@@ -395,7 +415,10 @@ a[sub][font_size=10]2[/font_size][/sub] = a[sub][font_size=10]1[/font_size][/sub
 a[sub][font_size=10]3[/font_size][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color]
 a[sub][font_size=10]4[/font_size][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color]
 a[sub][font_size=10]5[/font_size][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color]
-a[sub][font_size=10]6[/font_size][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color]",
+a[sub][font_size=10]6[/font_size][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color]
+Podemos simplificar as contas usando multiplicação:
+a[sub][font_size=10]3[/font_size][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] + [color=royal_blue]r[/color]
+a[sub][font_size=10]3[/font_size][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]2[/color]",
 
 "Nós começamos pelo a[sub][font_size=10]1[/font_size][/sub]
 E podemos encontrar os próximos fazendo:
@@ -411,7 +434,10 @@ a[sub][color=yellow_green][font_size=10]2[/font_size][/color][/sub] = a[sub][fon
 a[sub][color=yellow_green][font_size=10]3[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]2[/color]
 a[sub][color=yellow_green][font_size=10]4[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]3[/color]
 a[sub][color=yellow_green][font_size=10]5[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]4[/color]
-a[sub][color=yellow_green][font_size=10]6[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]5[/color]",
+a[sub][color=yellow_green][font_size=10]6[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]5[/color]
+Lembra que os númerors em [color=yellow_green]verde[/color] é a posição, podemos ver que ele tem uma relação com os números [color=fuchsia]rosa[/color].
+É sempre um a menos.
+",
 
 "Nós começamos pelo a[sub][font_size=10]1[/font_size][/sub]
 E podemos encontrar os próximos fazendo:
@@ -420,8 +446,7 @@ a[sub][color=yellow_green][font_size=10]3[/font_size][/color][/sub] = a[sub][fon
 a[sub][color=yellow_green][font_size=10]4[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]3[/color]
 a[sub][color=yellow_green][font_size=10]5[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]4[/color]
 a[sub][color=yellow_green][font_size=10]6[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]5[/color]
-...
-Então o a[sub][font_size=10]20[/font_size][/sub] = ...",
+Dessa forma qual será o a[sub][font_size=10]20[/font_size][/sub]?",
 
 "Nós começamos pelo a[sub][font_size=10]1[/font_size][/sub]
 E podemos encontrar os próximos fazendo:
@@ -444,5 +469,13 @@ a[sub][color=yellow_green][font_size=10]6[/font_size][/color][/sub] = a[sub][fon
 De maneira geral podemos fazer uma fórumla:
 a[sub][color=yellow_green][font_size=10]n[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia](n-1)[/color]
 ",
+"A fórmula a[sub][color=yellow_green][font_size=10]n[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia](n-1)[/color]
+Para recapitular, cada termo significa:
+	a[sub][font_size=10]1[/font_size][/sub] é o primeiro termo da sequência.
+	[color=royal_blue]r[/color] é a razão, valor somado a cada termo.
+	[color=yellow_green]n[/color] é a posição do termo na sequencia.
+	a[sub][color=yellow_green][font_size=10]n[/font_size][/color][/sub] é o número que está nessa posição.
+	[color=fuchsia](n-1)[/color] é a quantidade de vezes que deve multiplicar senod esse [color=yellow_green]n[/color] o mesmo da posição.
+	",
 "",
 ]

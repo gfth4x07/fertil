@@ -356,6 +356,17 @@ text = "a[sub][font_size=10]5[/font_size][/sub] = 17 +[color=royal_blue] 3[/colo
 scroll_active = false
 custom_effects = [SubResource("RichTextEffect_qlqx7")]
 
+[node name="linha5" type="RichTextLabel" parent="tutorial/bloco_de_notas"]
+offset_left = 323.0
+offset_top = 200.0
+offset_right = 416.75
+offset_bottom = 232.24878
+theme_override_colors/default_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+bbcode_enabled = true
+text = "a[sub][font_size=10]20[/font_size][/sub] = ?"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_qlqx7")]
+
 [connection signal="input_event" from="background/jardim" to="." method="_on_jardim_input_event"]
 [connection signal="input_event" from="background/jardim" to="tutorial" method="_on_jardim_input_event"]
 [connection signal="button_up" from="prox_dia" to="." method="_on_prox_dia_button_up"]

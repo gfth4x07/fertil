@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dy252hm86274l"]
+[gd_scene load_steps=6 format=3 uid="uid://dy252hm86274l"]
 
 [ext_resource type="Script" uid="uid://f5orndp85lxx" path="res://menu_principal.gd" id="1_bj1uy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bj1uy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gmcsc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ul6ys"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ns3he"]
 
 [node name="menu_principal" type="Node2D"]
 script = ExtResource("1_bj1uy")
@@ -64,6 +72,17 @@ theme_override_font_sizes/normal_font_size = 64
 text = "F(é)rtil"
 scroll_active = false
 
+[node name="botao_menu_modos" type="Button" parent="."]
+offset_left = 338.0
+offset_top = 58.0
+offset_right = 348.0
+offset_bottom = 68.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bj1uy")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gmcsc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ul6ys")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ns3he")
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="item_selected" from="Tutorial mode" to="." method="_on_tutorial_mode_item_selected"]
+[connection signal="pressed" from="botao_menu_modos" to="." method="_on_botao_menu_modos_pressed"]
