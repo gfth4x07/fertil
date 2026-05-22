@@ -4,6 +4,7 @@ var game_mode = ""
 var tutorial_mode = ""
 var etapa_tutorial = 0
 var score = 000
+var score_questionário = 0
 var scoreId = ""
 var score_table = "main"
 

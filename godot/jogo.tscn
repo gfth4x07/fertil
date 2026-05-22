@@ -174,7 +174,6 @@ position = Vector2(396.5, 107)
 texture = ExtResource("6_45nkh")
 
 [node name="fim_de_jogo" type="Sprite2D" parent="."]
-visible = false
 scale = Vector2(1, 0.8542857)
 texture = ExtResource("6_8c340")
 centered = false
@@ -200,7 +199,7 @@ text = "Você chegou no dia "
 [node name="pontuação" type="RichTextLabel" parent="fim_de_jogo"]
 offset_left = 48.0
 offset_top = 184.0
-offset_right = 464.0
+offset_right = 351.0
 offset_bottom = 227.0903
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 24
@@ -231,6 +230,23 @@ offset_right = 224.0
 offset_bottom = 277.4247
 text = "PLACAR"
 
+[node name="bonus" type="RichTextLabel" parent="fim_de_jogo"]
+offset_left = 401.0
+offset_top = 135.78595
+offset_right = 482.0
+offset_bottom = 173.24414
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]Bônus[/wave]"
+
+[node name="but_quest" type="Button" parent="fim_de_jogo"]
+offset_left = 394.0
+offset_top = 167.39131
+offset_right = 494.0
+offset_bottom = 198.39131
+text = "Questinário"
+
 [node name="voltar_menu" type="Button" parent="."]
 offset_left = 9.0
 offset_top = 6.0
@@ -239,6 +255,7 @@ offset_bottom = 37.0
 text = "Voltar ao menu"
 
 [node name="tutorial" type="Node2D" parent="."]
+visible = false
 script = ExtResource("10_orj5g")
 
 [node name="rita" type="Sprite2D" parent="tutorial"]
@@ -377,5 +394,6 @@ custom_effects = [SubResource("RichTextEffect_qlqx7")]
 [connection signal="item_selected" from="menu_loja/Loja" to="." method="_on_as_item_selected"]
 [connection signal="pressed" from="fim_de_jogo/novo_jogo" to="." method="_on_novo_jogo_pressed"]
 [connection signal="pressed" from="fim_de_jogo/placar" to="." method="_on_placar_pressed"]
+[connection signal="pressed" from="fim_de_jogo/but_quest" to="." method="_on_but_quest_pressed"]
 [connection signal="pressed" from="voltar_menu" to="tutorial" method="_on_voltar_menu_pressed"]
 [connection signal="pressed" from="tutorial/proximo" to="tutorial" method="_on_tutorial_proximo_pressed"]

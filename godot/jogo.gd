@@ -127,3 +127,8 @@ func _on_novo_jogo_pressed() -> void:
 
 func _on_placar_pressed() -> void:
 	get_tree().change_scene_to_file("res://high_score.tscn")
+
+
+func _on_but_quest_pressed() -> void:
+	get_tree().change_scene_to_file("res://quesntinário.tscn")
+	pass # Replace with function body.
