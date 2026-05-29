@@ -208,11 +208,11 @@ text = "Você terminou com "
 [node name="text" type="RichTextLabel" parent="fim_de_jogo"]
 offset_left = 28.0
 offset_top = 304.3478
-offset_right = 300.0
+offset_right = 340.0
 offset_bottom = 321.3478
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 12
-text = "Recarregue a página para jogar novamente!"
+text = "Responder o questinário aumenta a sua pontuação."
 fit_content = true
 scroll_active = false
 

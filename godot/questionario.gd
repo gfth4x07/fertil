@@ -3,6 +3,7 @@ var pagina = 0
 var enviado = false
 var acertoSprite = preload("res://acerto.tscn")
 var erroSprite = preload("res://erro.tscn")
+
 func _ready() -> void:
 	pagina = 1
 	$Anterior.hide()
@@ -13,6 +14,8 @@ func _ready() -> void:
 	$Pagina4.hide()
 	$Pagina5.hide()
 	$Menu1.show()
+	$Menu2.hide()
+	$Placar.hide()
 	
 func _on_anterior_pressed() -> void:
 	var paginaAtual = get_node("Pagina" + str(pagina))
@@ -137,8 +140,12 @@ func _on_enviar_pressed() -> void:
 		for c in p.get_children():
 			if c.name.begins_with("Resposta"):
 				c.editable = false
+				
 	
-	$Pagina5/Resultado.text = "Parabéns você acertou %d/10 Perguntas!" % pontos
+	
+	$Pagina5/Resultado.text = "Parabéns você acertou %d/10 Perguntas!\nSua pontuação total foi %d + %d×100 = %d"%[pontos, global.score, pontos,global.score + pontos*100]
+	global.score += pontos*100
+	$Placar.show()
 	_on_proxima_pressed()
 	
 
@@ -150,4 +157,9 @@ func _on_resposta_list_text_changed(new_text: String, source: LineEdit) -> void:
 
 
 func _on_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://menu_modos.tscn")
+	get_tree().change_scene_to_file("res://menu_principal.tscn")
+
+
+func _on_placar_pressed() -> void:
+	get_tree().change_scene_to_file("res://high_score.tscn")
+	pass # Replace with function body.
