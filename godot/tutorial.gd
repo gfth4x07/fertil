@@ -241,27 +241,16 @@ func tutorial():
 			$fala2.text = texto2_sequencias[fala_texto2]
 			fala_texto2 += 1
 		if global.etapa_tutorial == 40:
-			$fala2.text = texto2_sequencias[fala_texto2]
-			fala_texto2 += 1
-		if global.etapa_tutorial == 41:
-			$fala2.text = texto2_sequencias[fala_texto2]
-			fala_texto2 += 1
-		if global.etapa_tutorial == 42:
-			$fala2.text = texto2_sequencias[fala_texto2]
-			fala_texto2 += 1
-		if global.etapa_tutorial == 99:
-			pass
-		
-		
-		
-		if global.etapa_tutorial == 60: #FIM
+			$fala2.hide()
 			$proximo.hide()
 			$rita.hide()
 			$rita_smile.show()
 			$rita.position = Vector2(229,122)
 			$fala.position = Vector2(63,157)
+			$fala.show()
 			$"../voltar_menu".position = Vector2(176,256)
 			$"../voltar_menu".show()
+
 	
 	atualizar_texto()
 	$Label.text = str(global.etapa_tutorial)
@@ -386,14 +375,14 @@ Também podemos escrever como:
 Ou seja, o 4º termo da sequência, ou ainda [b]a[sub][font_size=10]4[/font_size][/sub][/b]",
 	"Agora avance os dias para verificar.",  # 22
 	"Um padrão que podemos verificar é que para chegar no próximo termo sempre estamos somando 3.",
-	"Como o último dia de colheita foi o 14, o próximo será 14 + 3 = 17!",  
-	"Olha, deu isso mesmo!!
+	"Como o último dia de colheita foi o 14, o próximo será 14 + 3 = 17.",  
+	"Olha, deu isso mesmo!
 
-Agora colha o morango",  # 25
-	"As sequências que têm esse padrão de sempre somar um valor para obter o próximo damos o nome de Progressão Aritmética ou PA.",
+Agora, colha o morango.",  # 25
+	"As sequências que têm esse padrão de sempre somar um valor para obter o próximo damos o nome de Progressão Aritmética ou, para simpliicar, de PA.",
 	"E a esse número que estamos somando damos o nome de [color=royal_blue]razão[/color] e usamos a letra [color=royal_blue]r[/color] para indicar esse valor.",
 	"Seguindo o padrão da sequência, podemos falar que a[sub][font_size=10]5[/font_size][/sub] = a[sub][font_size=10]4[/font_size][/sub] +  [color=royal_blue]r[/color].",
-	"E nossa próxima colheita será dia 20
+	"E nossa próxima colheita será dia 20.
 	
 Não é legal?",
 	"Imagina agora que você quer descobrir quando vai ser a colheita de número 20
@@ -404,7 +393,7 @@ hummm...",  # 30
 Podemos pegar o a[sub][font_size=10]1[/font_size][/sub] e fazer
 a[sub][font_size=10]20[/font_size][/sub] = a[sub][font_size=10]1[/font_size][/sub]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color]+[color=royal_blue]r[/color] ",
 "Ih, ficou confuso? Deixa eu te explicar.",  # 32
-	"","","","","","","","","","","","","","","","","","","","","","",
+	"","","","","","","",
 	"FIM DO TUTORIAL"]
 
 
@@ -435,7 +424,7 @@ a[sub][color=yellow_green][font_size=10]3[/font_size][/color][/sub] = a[sub][fon
 a[sub][color=yellow_green][font_size=10]4[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]3[/color]
 a[sub][color=yellow_green][font_size=10]5[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]4[/color]
 a[sub][color=yellow_green][font_size=10]6[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]5[/color]
-Lembra que os númerors em [color=yellow_green]verde[/color] é a posição, podemos ver que ele tem uma relação com os números [color=fuchsia]rosa[/color].
+Lembre-se que os números em [color=yellow_green]verde[/color] representam a posição, podemos ver que ele tem uma relação com os números [color=fuchsia]rosa[/color].
 É sempre um a menos.
 ",
 
@@ -466,7 +455,7 @@ a[sub][color=yellow_green][font_size=10]3[/font_size][/color][/sub] = a[sub][fon
 a[sub][color=yellow_green][font_size=10]4[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]3[/color]
 a[sub][color=yellow_green][font_size=10]5[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]4[/color]
 a[sub][color=yellow_green][font_size=10]6[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia]5[/color]
-De maneira geral podemos fazer uma fórumla:
+De maneira geral podemos fazer uma fórmula:
 a[sub][color=yellow_green][font_size=10]n[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia](n-1)[/color]
 ",
 "A fórmula a[sub][color=yellow_green][font_size=10]n[/font_size][/color][/sub] = a[sub][font_size=10]1[/font_size][/sub] + [color=royal_blue]r[/color] × [color=fuchsia](n-1)[/color]
@@ -475,7 +464,7 @@ Para recapitular, cada termo significa:
 	[color=royal_blue]r[/color] é a razão, valor somado a cada termo.
 	[color=yellow_green]n[/color] é a posição do termo na sequencia.
 	a[sub][color=yellow_green][font_size=10]n[/font_size][/color][/sub] é o número que está nessa posição.
-	[color=fuchsia](n-1)[/color] é a quantidade de vezes que deve multiplicar senod esse [color=yellow_green]n[/color] o mesmo da posição.
+	[color=fuchsia](n-1)[/color] é a quantidade de vezes que deve multiplicar, sendo [color=yellow_green]n[/color] o número da posição.
 	",
 "",
 ]
