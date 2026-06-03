@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var input_field = $"./nome"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,6 +24,13 @@ func _process(_delta: float) -> void:
 
 func _on_nome_focus_entered() -> void:
 	$alerta.hide()
+	# This function executes directly from a user touch event.
+	# iPadOS Safari will allow the keyboard to open here.
+	$nome.grab_focus() 
+	
+	# Fallback safety check for Web Display Server capabilities
+	if DisplayServer.has_feature(DisplayServer.FEATURE_VIRTUAL_KEYBOARD):
+		DisplayServer.virtual_keyboard_show($nome.text)
 
 
 func _on_enviar_pressed() -> void:
@@ -55,3 +64,13 @@ func mostrar_placar():
 
 func _on_voltar_pressed() -> void:
 	get_tree().change_scene_to_file("res://menu_principal.tscn")
+
+
+func _on_texture_button_pressed() -> void:
+	# This function executes directly from a user touch event.
+	# iPadOS Safari will allow the keyboard to open here.
+	input_field.grab_focus() 
+	
+	# Fallback safety check for Web Display Server capabilities
+	if DisplayServer.has_feature(DisplayServer.FEATURE_VIRTUAL_KEYBOARD):
+		DisplayServer.virtual_keyboard_show(input_field.text)

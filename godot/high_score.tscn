@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://86hlwpqinb08"]
+[gd_scene load_steps=4 format=3 uid="uid://86hlwpqinb08"]
 
 [ext_resource type="Script" uid="uid://b43rgns42iswd" path="res://high_score.gd" id="1_y2wna"]
 [ext_resource type="FontFile" uid="uid://dt3tjixq6etm1" path="res://RobotoMono-VariableFont_wght.ttf" id="2_6ub14"]
+[ext_resource type="Texture2D" uid="uid://b1sv1fxask5py" path="res://sprites/teclado.png" id="3_xei6d"]
 
 [node name="high_score" type="Node2D"]
 script = ExtResource("1_y2wna")
@@ -59,6 +60,15 @@ offset_right = 521.0
 offset_bottom = 274.0
 text = "Voltar ao menu"
 
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 213.0
+offset_top = 150.0
+offset_right = 725.0
+offset_bottom = 662.0
+scale = Vector2(0.05, 0.05)
+texture_normal = ExtResource("3_xei6d")
+
 [connection signal="pressed" from="enviar" to="." method="_on_enviar_pressed"]
 [connection signal="focus_entered" from="nome" to="." method="_on_nome_focus_entered"]
 [connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

@@ -174,7 +174,6 @@ position = Vector2(396.5, 107)
 texture = ExtResource("6_45nkh")
 
 [node name="fim_de_jogo" type="Sprite2D" parent="."]
-visible = false
 scale = Vector2(1, 0.8542857)
 texture = ExtResource("6_8c340")
 centered = false
@@ -200,7 +199,7 @@ text = "Você chegou no dia "
 [node name="pontuação" type="RichTextLabel" parent="fim_de_jogo"]
 offset_left = 48.0
 offset_top = 184.0
-offset_right = 351.0
+offset_right = 374.0
 offset_bottom = 227.0903
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 24
@@ -219,33 +218,35 @@ scroll_active = false
 
 [node name="novo_jogo" type="Button" parent="fim_de_jogo"]
 offset_left = 327.0
-offset_top = 248.16052
+offset_top = 258.69565
 offset_right = 489.0
-offset_bottom = 280.9364
+offset_bottom = 291.47153
 text = "JOGAR NOVAMENTE"
 
 [node name="placar" type="Button" parent="fim_de_jogo"]
-offset_left = 94.0
-offset_top = 244.64883
-offset_right = 224.0
-offset_bottom = 277.4247
+offset_left = 424.0
+offset_top = 300.83612
+offset_right = 508.0
+offset_bottom = 331.83612
 text = "PLACAR"
 
 [node name="bonus" type="RichTextLabel" parent="fim_de_jogo"]
-offset_left = 401.0
-offset_top = 135.78595
-offset_right = 482.0
-offset_bottom = 173.24414
+offset_left = 105.0
+offset_top = 225.91974
+offset_right = 186.0
+offset_bottom = 263.37793
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]Bônus[/wave]"
+text = "[color=yellow][wave amp=50.0 freq=5.0 connected=1]Bônus[/wave][/color]"
 
 [node name="but_quest" type="Button" parent="fim_de_jogo"]
-offset_left = 394.0
-offset_top = 167.39131
-offset_right = 494.0
-offset_bottom = 198.39131
+offset_left = 53.0
+offset_top = 257.5251
+offset_right = 237.0
+offset_bottom = 288.5251
 text = "Questinário"
 
 [node name="voltar_menu" type="Button" parent="."]
@@ -256,6 +257,7 @@ offset_bottom = 37.0
 text = "Voltar ao menu"
 
 [node name="tutorial" type="Node2D" parent="."]
+visible = false
 script = ExtResource("10_orj5g")
 
 [node name="rita" type="Sprite2D" parent="tutorial"]
